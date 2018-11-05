@@ -35,12 +35,14 @@ Elegir arranque uefi desde usb: UEFI: SanDisk, Partition 1.
 3.- Si no se ve el texto de consola: setfont iso01-12x22.psfu.gz
 /usr/share/fonts/local/
 
-Mejor sería, después de instalar la red, 
+Mejor sería, después de instalar la red, Pero no se puede hacer en el usb de instlación.
+```
 pacman -Sy terminus-font 
 pacman -Ql terminus-font
 setfont ter-v32
 
-
+loadkeys es
+```
 
 ## Instalar RED modo manual
 
