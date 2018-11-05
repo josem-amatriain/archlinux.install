@@ -59,10 +59,12 @@ ping archlinux.org
 
 A partir de ahora puedo usar scripts remotos preparados.
 
+```
 timedatectl set-ntp true
 systemctl start sshd 
 passwd 123456
 123456
+```
 
 PAra acceso remoto
 
