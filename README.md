@@ -74,9 +74,21 @@ passwd 123456
 123456
 ```
 
+You must download the repository with git. You must compress the install folder and copy to the destination machine:
+```
+scp /tmp/install.tar.gz root@192.168.1.123:/tmp/.
+```
+
 # Using scripts
 
 The repository has two main scripts: ```install1.sh``` and ```install2.sh```
 The first one, makes a basic install. The second one permits booting in the new fresh system and complete the installation.
+
+In the destination machine, at the ```/tmp``` directory you must decompress the ```install.tar.gz```. Yo can use ```mc``` command. You must create the ```/tmp/install``` folder and execute ```/tmp/install/install1.sh```
+
+When the script ```install1.sh``` finishes you are in the chroot environement and you must execute the ```install2.sh```.
+```
+/install/install2.sh
+```
 
 
