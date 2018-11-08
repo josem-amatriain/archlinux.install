@@ -39,6 +39,9 @@ mount ${PARTICION}3 /mnt
 mkdir /mnt/boot
 mount ${PARTICION}1 /mnt/boot
 
+mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.0
+cp -p network/mirrorlist /etc/pacman.d/mirrorlist
+
 read x
 clear
 
