@@ -2,11 +2,11 @@
 
 clear
 
-cd /tmp
+#cd /tmp
 
-curl https://codeload.github.com/josem-amatriain/archlinux.install/zip/master --output master.zip
-unzip master.zip
-mv archlinux.install-master/install /tmp/install
+#curl https://codeload.github.com/josem-amatriain/archlinux.install/zip/master --output master.zip
+#unzip master.zip
+#mv archlinux.install-master/install /tmp/install
 
 cd /tmp/install
 
@@ -22,11 +22,11 @@ ping -c5 archlinux.org
 read x
 
 parted $PARTICION < disk/parted
-gdisk -l
+gdisk -l $PARTICION
 read x
 
 gdisk $PARTICION < disk/com2
-gdisk -l
+gdisk -l $PARTICION
 read x
 clear
 
@@ -42,7 +42,7 @@ mount ${PARTICION}1 /mnt/boot
 read x
 clear
 
-pacstrap -i /mnt base mc openssh git base-devel net-tools wireless_tools networkmanager unzip bzip2 pbzip2 parted gdisk
+pacstrap -i /mnt base mc openssh net-tools gdisk
 genfstab -U /mnt > /mnt/etc/fstab 
 cp -p /tmp/install /mnt/install
 read x
