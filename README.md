@@ -86,3 +86,9 @@ The first one, makes a basic install. The second one permits booting in the new 
 
 In the destination machine, at the ```/tmp``` directory you must decompress the ```install.tar.gz```. Yo can use ```mc``` command. You must create the ```/tmp/install``` folder and execute ```/tmp/install/install1.sh```
 
+When the script ```install1.sh``` finishes you are in the chroot environement and you must execute the ```install2.sh```.
+```
+/install/install2.sh
+```
+
+
