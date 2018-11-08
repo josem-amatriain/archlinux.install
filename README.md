@@ -6,48 +6,55 @@ Scripts for arch linux automtic installation.
 
 ## Steps
  
- * Crear un usb arrancable
- * Arrancar y poner teclado es y fuentes
- * Poner red manualmente
- * Particionar y poner arranque uefi
- * Instalación inicial
- * Reiniciar y completar install usando git
+ * Create a bootable archlinux usb
+ * To boot and set keyboard/console fonts
+ * Set network manually
+ * Patiotioning and setting UEFI boot
+ * Initial minimal installation
+ * Rebooting and complete installation using git
  
-
-
-## Crear un usb arrancable (3.0) con una imagen iso de arch
+## Create a bootable archlinux usb
+Download a Archlinux bootable iso image and write to a bootable USB device:
 
 ```
 dd bs=4M if=/tmp/archlinux.iso of=/dev/sdh && sync
 ```
 
-## Arrancar
-
-Pulsar F12 para elegir el dispositivo de arranque 
-
-Elegir arranque uefi desde usb: UEFI: SanDisk, Partition 1.
+## BOOT
 
 
+1. Set BIOS to boot using UEFI.
 
-1.- Al arrancar el usb usar uefi y elegir arch...
-2.- Si no encuentra el usb. Solución: Cuando dice que waiting 30segundos sacar el usb y volverlo a meter. Así lo reconoce y arranca ok
+Press F12 to choose the boot device. We must to choose UEFI boot from USB
 
-3.- Si no se ve el texto de consola: setfont iso01-12x22.psfu.gz
-/usr/share/fonts/local/
+1. If the USB device is not detected the boot image says: Waiting 30 seconds...
+You must to unplug and plug the usb device. The device will be recognized and you can continue.
 
-Mejor sería, después de instalar la red, Pero no se puede hacer en el usb de instlación.
+1. If your screen is a modern one with very high resolution the console text will be unredable. You must change console font:
+
+```
+setfont iso01-12x22.psfu.gz
+``` 
+The fonts available are in /usr/share/fonts/local/
+The /etc/vconsole file sets the console font in the installed system.
+
+
+More fonts are available in the postinstallation process:
+
 ```
 pacman -Sy terminus-font 
 pacman -Ql terminus-font
-setfont ter-v32
+setfont ter-v32n
 
+# Setting the keyboard languaje : 
 loadkeys es
 ```
+[Loadkeys](https://wiki.archlinux.org/index.php/Linux_console/Keyboard_configuration#Loadkeys)
 
-## Instalar RED modo manual
+
+## Installing network manual mode
 
 ```
-
 ip addr add 192.168.1.444/24 dev eth0
 ip route show 
 ip route add default via 192.168.1.1
@@ -55,11 +62,10 @@ ip route add default via 192.168.1.1
 echo -en "\nnameserver 8.8.4.4\n" >> /etc/resolv.conf
 
 ping archlinux.org
-
-
 ```
 
-A partir de ahora puedo usar scripts remotos preparados.
+Now, we can use remote scripts from our repository.
+
 
 ```
 timedatectl set-ntp true
@@ -68,5 +74,9 @@ passwd 123456
 123456
 ```
 
-PAra acceso remoto
+# Using scripts
+
+The repository has two main scripts: ```install1.sh``` and ```install2.sh```
+The first one, makes a basic install. The second one permits booting in the new fresh system and complete the installation.
+
 
