@@ -8,3 +8,5 @@
  * The ```install2.sh``` script makes the system bootable.
 
 The etc directory contains the config.sh file with the basics and self-explanatory parameters needed for the basic configuration.
+The ```install1.sh``` script contains ```read x``` instructions to see step by step the correct execution.
+
