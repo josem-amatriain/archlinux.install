@@ -4,6 +4,7 @@ clear
 
 cd /install
 source etc/config.sh
+source etc/$IFACE.sh
 
 ip addr add $IP/24 dev $IFACE
 cp $MYDIR/network/resolv.conf /etc/resolv.conf
