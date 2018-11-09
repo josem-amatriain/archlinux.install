@@ -47,9 +47,10 @@ clear
 
 pacstrap -i /mnt base mc openssh net-tools gdisk
 genfstab -U /mnt > /mnt/etc/fstab 
-cp -p /tmp/install /mnt/install
+cp -rp /tmp/install /mnt/install
 read x
 clear
 
-arch-chroot /mnt /bin/bash 
+arch-chroot /mnt /bin/bash -c /install/install2.sh
+
 

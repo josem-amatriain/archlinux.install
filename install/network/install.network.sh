@@ -3,6 +3,9 @@
 TARGET_DIR="/etc/systemd/system"
 TARGET="network@.service"
 
+MYDIR="/install"
+source $MYDIR/etc/config.sh
+
 cd $MYDIR
 
 cp $MYDIR/network/resolv.conf /etc/resolv.conf
