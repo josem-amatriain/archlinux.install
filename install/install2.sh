@@ -19,7 +19,11 @@ echo -en " rw\n\n" >> /boot/loader/entries/arch.conf
 
 /install/network/install.network.sh
 
+echo ""
+
 pacman -Suy 
-pacman -Sy git wireless_tools unzip bzip2 pbzip2 parted terminus-font
+pacman -Sy $PACKAGES terminus-font
 # base-devel netorkmanager
+
+/install/post.install.sh
 

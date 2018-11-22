@@ -10,7 +10,11 @@ clear
 
 cd /tmp/install
 
+# LOAD parameters
 source etc/config.sh
+
+# initial setup
+timedatectl set-ntp true
 
 rm /etc/resolv.conf
 cp network/resolv.conf /etc/resolv.conf

@@ -16,3 +16,6 @@ broadcast=$BROADCAST
 gateway=$GW
 " > $TARGET
 
+systemctl enable network@$IFACE.service
+systemctl start network@$IFACE.service
+

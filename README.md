@@ -45,9 +45,16 @@ More fonts are available in the postinstallation process:
 pacman -Sy terminus-font 
 pacman -Ql terminus-font
 setfont ter-v32n
+```
 
-# Setting the keyboard languaje : 
+## Keyboard
+
+```
+# Setting the keyboard languaje (we choose the one that corresponds) : 
 loadkeys es
+loadkeys fr
+loadkeys uk
+
 ```
 [Loadkeys](https://wiki.archlinux.org/index.php/Linux_console/Keyboard_configuration#Loadkeys)
 
@@ -74,9 +81,11 @@ passwd 123456
 123456
 ```
 
-You must download the repository with git. You must compress the install folder and copy to the destination machine:
+You have two machines, the machine to install and the desktop/personal machine.
+You must download the repository with git in your personal machine. 
+You must compress the install folder and copy to the destination machine to install:
 ```
-scp /tmp/install.tar.gz root@192.168.1.123:/tmp/.
+scp /tmp/install.tar.gz root@destination_machine:/tmp/.
 ```
 
 # Using scripts
@@ -86,9 +95,9 @@ The first one, makes a basic install. The second one permits booting in the new 
 
 In the destination machine, at the ```/tmp``` directory you must decompress the ```install.tar.gz```. Yo can use ```mc``` command. You must create the ```/tmp/install``` folder and execute ```/tmp/install/install1.sh```
 
-When the script ```install1.sh``` finishes you are in the chroot environement and you must execute the ```install2.sh```.
+The last command in the script ```install1.sh``` is the exeution of ```install2.sh```.
 ```
-/install/install2.sh
+arch-chroot /mnt /bin/bash -c /install/install2.sh
 ```
 
 
