@@ -16,6 +16,6 @@ PACKAGES=" git wireless_tools unzip bzip2"
 
 
 
-USER="user"
+
 
 

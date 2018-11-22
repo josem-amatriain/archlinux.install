@@ -83,10 +83,20 @@ passwd 123456
 
 You have two machines, the machine to install and the desktop/personal machine.
 You must download the repository with git in your personal machine. 
+
+# Install
+
 You must compress the install folder and copy to the destination machine to install:
 ```
 scp /tmp/install.tar.gz root@destination_machine:/tmp/.
+# or
+cd /tmp
+wget https://github.com/josem-amatriain/archlinux.install/archive/master.tar.gz
 ```
+
+Using mc, you must uncompress master.atr.gz at /tmp
+You must config etc/config.sh to your settings.
+
 
 # Using scripts
 

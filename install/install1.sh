@@ -3,20 +3,20 @@
 clear
 
 #cd /tmp
-
-#curl https://codeload.github.com/josem-amatriain/archlinux.install/zip/master --output master.zip
-#unzip master.zip
+#
+#wget https://codeload.github.com/josem-amatriain/archlinux.install/archive/master.tar.gz
 #mv archlinux.install-master/install /tmp/install
 
 cd /tmp/install
 
 # LOAD parameters
 source etc/config.sh
+source etc/config.net.sh
 
 # initial setup
 timedatectl set-ntp true
 
-rm /etc/resolv.conf
+mv /etc/resolv.conf /etc/resolv.conf.0
 cp network/resolv.conf /etc/resolv.conf
 ip route show 
 ip route add default via $GW

@@ -10,9 +10,17 @@ BROADCAST="192.168.1.255"
 TARGET="/etc/conf.d/network@$IFACE"
 
 
-echo "address=$MYIP
+echo "
+
+address=$MYIP
 netmask=$MYMASK
 broadcast=$BROADCAST
 gateway=$GW
+
 " > $TARGET
+
+
+# dont work in chroot
+#systemctl enable network@$IFACE.service
+#systemctl start network@$IFACE.service
 
