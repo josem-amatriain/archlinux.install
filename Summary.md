@@ -20,5 +20,9 @@ passwd
 ```
 ssh-keygen -R  192.168.1.2
 ssh root@192.168.1.2
+wget https://github.com/josem-amatriain/archlinux.install/archive/master.tar.gz
+
+# you must decompress and put yhe install directory at /tmp/instsll
+/tmp/install/install1.sh
 
 ```
