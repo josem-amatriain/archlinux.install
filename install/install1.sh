@@ -16,11 +16,11 @@ source etc/config.net.sh
 # initial setup
 timedatectl set-ntp true
 
-mv /etc/resolv.conf /etc/resolv.conf.0
-cp network/resolv.conf /etc/resolv.conf
-
 ping -c1 archlinux.org
 if [ $? -eq 0 ]; then true; else 
+    mv /etc/resolv.conf /etc/resolv.conf.0
+    cp network/resolv.conf /etc/resolv.conf
+
     ip route show 
     ip route add default via $GW
     ip route show 
