@@ -1,5 +1,8 @@
 #!/bin/bash -x
 
+pacman -Suy
+pacman -Sy $PACKAGES
+
 /install/network/install.network.sh
 
 cd /install 

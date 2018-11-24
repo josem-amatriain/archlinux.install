@@ -53,7 +53,7 @@ cp -p network/mirrorlist /etc/pacman.d/mirrorlist
 read x
 clear
 
-pacstrap -i /mnt base mc openssh net-tools gdisk
+pacstrap -i /mnt base mc
 genfstab -U /mnt > /mnt/etc/fstab 
 cp -rup /tmp/install /mnt/install
 read x
