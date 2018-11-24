@@ -1,13 +1,13 @@
 #!/bin/bash -x
 
-pacman -Suy
-pacman -Sy $PACKAGES
-
-/install/network/install.network.sh
-
 cd /install 
 source etc/config.sh
 source etc/config.post.sh
+
+/install/network/install.network.sh
+
+pacman -Suy
+pacman -Sy $PACKAGES
 
 
 
