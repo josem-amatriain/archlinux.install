@@ -17,7 +17,9 @@ PACKAGES=" git wireless_tools unzip bzip2"
 VCONSOLE="
 
 KEYMAP=es
-FONT=ter-v32n
+#FONT=ter-v32n
+FONT=ter-v14n
+
 
 "
 
