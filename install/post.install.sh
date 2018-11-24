@@ -1,7 +1,12 @@
 #!/bin/bash -x
 
+/install/network/install.network.sh
+
 cd /install 
 source etc/config.sh
+source etc/config.post.sh
+
+
 
 # Create group with ID 12345 by default
 if [ -n "$GROUP" ]; then 

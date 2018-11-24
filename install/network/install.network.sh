@@ -6,7 +6,7 @@
 
 MYDIR="/install"
 source $MYDIR/etc/config.sh
-source $MYDIR/etc/config.sh
+source $MYDIR/etc/config.net.sh
 
 cd $MYDIR
 

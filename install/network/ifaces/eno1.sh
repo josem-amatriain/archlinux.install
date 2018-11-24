@@ -21,6 +21,6 @@ gateway=$GW
 
 
 # dont work in chroot
-#systemctl enable network@$IFACE.service
-#systemctl start network@$IFACE.service
+systemctl enable network@$IFACE.service
+systemctl start network@$IFACE.service
 

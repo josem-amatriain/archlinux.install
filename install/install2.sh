@@ -15,9 +15,6 @@ cp boot/arch.conf /boot/loader/entries/arch.conf
 
 echo -en "$(blkid -s PARTUUID -o value ${PARTICION}3) rw\n\n" >> /boot/loader/entries/arch.conf
 
-/install/network/install.network.sh
-
-
 echo "$VCONSOLE" > /etc/vconsole.conf
 
 mv /etc/locale.gen /etc/locale.gen.0
