@@ -18,12 +18,16 @@ timedatectl set-ntp true
 
 mv /etc/resolv.conf /etc/resolv.conf.0
 cp network/resolv.conf /etc/resolv.conf
-ip route show 
-ip route add default via $GW
-ip route show 
 
-ping -c5 archlinux.org
-read x
+ping -c1 archlinux.org
+if [ $? -eq 0 ]; then true; else 
+    ip route show 
+    ip route add default via $GW
+    ip route show 
+    
+    ping -c5 archlinux.org
+    read x
+fi
 
 parted $PARTICION < disk/parted
 gdisk -l $PARTICION
@@ -51,7 +55,7 @@ clear
 
 pacstrap -i /mnt base mc openssh net-tools gdisk
 genfstab -U /mnt > /mnt/etc/fstab 
-cp -rp /tmp/install /mnt/install
+cp -rup /tmp/install /mnt/install
 read x
 clear
 
