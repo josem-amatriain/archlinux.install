@@ -12,7 +12,7 @@
 ```ip addr show
 # The system has obtained ip by DHCP!!
 systemctl start sshd
-passwd ```
+passwd
 
 # From remote computer:
 ssh-keygen -R  192.168.1.2
