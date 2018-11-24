@@ -27,3 +27,4 @@ fi
 
 passwd
 
+sed -e 's/\"$GREEN\"/\"\$RED\"/g' etc/bashrc > /root/.bashrc
