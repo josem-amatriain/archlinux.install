@@ -4,7 +4,7 @@ clear
 
 #cd /tmp
 #
-#wget https://codeload.github.com/josem-amatriain/archlinux.install/archive/master.tar.gz
+# wget https://github.com/josem-amatriain/archlinux.install/archive/master.tar.gz
 #mv archlinux.install-master/install /tmp/install
 
 cd /tmp/install
