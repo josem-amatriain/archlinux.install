@@ -22,5 +22,11 @@ cp -p $MYDIR/network/$TARGET "/etc/systemd/system/$TARGET"
 
 mkdir -p /etc/conf.d
 
-source $MYDIR/network/ifaces/*.sh
+for IFACE in $MYDIR/network/ifaces/*.sh
+do
+    source $IFACE
+done
+
+
+
 
