@@ -6,8 +6,8 @@ source etc/config.post.sh
 
 /install/network/install.network.sh
 
-pacman -Suy
-pacman -Sy $PACKAGES
+pacman --noconfirm -Suy
+pacman --noconfirm -Sy $PACKAGES
 
 
 
