@@ -16,8 +16,8 @@ MYDIR="/tmp/install"
 
 echo arch-chroot /mnt
 
-if [ -a "$MYDIR/etc/bashrc" ]; then 
-    source $MYDIR/etc/bashrc
+if [ -a "$MYDIR/etc/bashrc.0" ]; then 
+    source $MYDIR/etc/bashrc.0
 else
     echo "bashrc no se encuentra"
     exit 1
