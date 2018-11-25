@@ -22,3 +22,12 @@ wget https://github.com/josem-amatriain/archlinux.install/archive/master.tar.gz
 # you must decompress and put the install directory at /tmp/install
 /tmp/install/install1.sh 
 ```
+
+# REBOOT
+
+1. reboot
+1. Log IN as root without password
+1. cd /install
+1. ./post.install.sh
+
+
