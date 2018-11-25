@@ -103,7 +103,7 @@ for IFACE in $MYDIR/network/ifaces/*.sh
 do
     IF0=$(basename $IFACE)
     IF=$( echo $IF0 | cut -d'.' -f1)
-    echo systemctl status network@$IF
+    systemctl status network@$IF
 done
 read x
 
