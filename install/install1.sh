@@ -2,12 +2,10 @@
 
 clear
 
-#cd /tmp
-#
 # wget https://github.com/josem-amatriain/archlinux.install/archive/master.tar.gz
-#mv archlinux.install-master/install /tmp/install
+#mv archlinux.install-master/install /install
 
-cd /tmp/install
+cd /install
 
 # LOAD parameters
 source etc/config.sh
@@ -48,7 +46,7 @@ cp -p network/mirrorlist /etc/pacman.d/mirrorlist
 
 pacstrap -i /mnt base mc
 genfstab -U /mnt > /mnt/etc/fstab 
-cp -rup /tmp/install /mnt/install
+cp -rup /install /mnt/install
 
 arch-chroot /mnt /bin/bash -c /install/install2.sh
 

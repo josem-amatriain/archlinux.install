@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-MYDIR="/tmp/install"
+MYDIR="/install"
 cd $MYDIR
 source etc/config.sh
 source etc/bashrc
