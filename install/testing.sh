@@ -23,6 +23,8 @@ else
     exit 1
 fi
 
+DEF=$DEFAULT
+
 echo -en "\n\n   $BLUE Testing installation$DEF.\n\n"
 echo -en "\n Testing system datetime: $GREEN $(date) $DEF\n"
 
@@ -48,56 +50,78 @@ else
 fi
 read x 
 clear
+
+echo -en "\n\n   $BLUE Network confign$DEF.\n\n"
 systemctl status network@*
 
 echo -en "\n\n\n\n"
 
+echo -en "\n\n   $BLUE Routing table $DEF.\n\n"
 ip route show
 read x
 clear
+
+echo -en "\n\n   $BLUE IPs $DEF.\n\n"
 ip addr show
 
 echo -en "\n\n\n\n"
-
+echo -en "\n\n   $BLUE DNS resolving $DEF.\n\n"
 
 
 cat /etc/resolv.conf
 read x
 clear
+
+echo -en "\n\n   $BLUE Disk partitions: $DEF.\n\n"
 fdisk -l $PARTICION
 gdisk -l $PARTICION
+
+echo -en "\n\n   $BLUE Partition sizes $DEF.\n\n"
 df -h
 read x 
 clear
+
+echo -en "\n\n   $BLUE FSTAB $DEF.\n\n"
 cat /etc/fstab
 echo -en "\n\n\n\n"
 
+echo -en "\n\n   $BLUE pacman mirrors and install folder: $DEF.\n\n"
 ls -l /etc/pacman.d/mirror*
 ls -la /install
 
 read x
 clear
 
+echo -en "\n\n   $BLUE Booting config $DEF.\n\n"
 cat /boot/loader/loader.conf
 
 echo -en "\n\n\n\n"
+
+echo -en "\n\n   $BLUE arch entry:$DEF.\n\n"
 cat /boot/loader/entries/arch.conf
 
 read x 
 clear
+
+echo -en "\n\n   $BLUE vconsole locale.conf locale.gen & localtime $DEF.\n\n"
 cat /etc/vconsole.conf /etc/locale.conf /etc/locale.gen
 ls -l /etc/localtime
 read x 
 clear
+
+echo -en "\n\n   $BLUE Users & groups $DEF.\n\n"
 grep $USER /etc/passwd
 grep $GROUPID /etc/group
 read x
 clear
-tail -9 /etc/ssh/sshd_config
+echo -en "\n\n   $BLUE ssh config $DEF.\n\n"
+grep -v '^#' /etc/ssh/sshd_config | grep -v '^$'
 systemctl status sshd
+echo -en "\n\n   $BLUE services: $DEF.\n\n"
 netstat -tulnp 
 read x
 clear
+echo -en "\n\n   $BLUE SystemCTL Network settings $DEF.\n\n"
 ls -l /etc/systemd/system /etc/conf.d/
 for IFACE in $MYDIR/network/ifaces/*.sh
 do
