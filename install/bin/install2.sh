@@ -30,4 +30,6 @@ hwclock --systohc --utc
 
 pacman --noconfirm -Sy terminus-font
 
-/install/network/install.network.sh
+/install/bin/install.network.sh
+echo "Changing root password:"
+passwd

@@ -3,10 +3,16 @@
 MYDIR="/install"
 cd $MYDIR
 
+mv /etc/resolv.conf /etc/resolv.conf.0
+cp $MYDIR/network/resolv.conf /etc/resolv.conf
+
+systemctl enable sshd
+systemctl start sshd
+
+
 source etc/config.sh
 source etc/config.post.sh
 
-#/install/network/install.network.sh
 for IFACE in $MYDIR/network/ifaces/*.sh
 do
     IF0=$(basename $IFACE)
@@ -16,8 +22,6 @@ done
 
 pacman --noconfirm -Suy
 pacman --noconfirm -Sy $PACKAGES
-
-
 
 # Create group with ID 12345 by default
 if [ -n "$GROUP" ]; then 
@@ -35,12 +39,4 @@ fi
 
 cp /etc/skel/.bash_profile /root/.
 
-passwd
-
 sed -e 's/\"$GREEN\"/\"\$RED\"/g' etc/bashrc > /root/.bash_profile
-
-echo -en "\n\nPasswordAuthentication yes\nPermitRootLogin yes\n" > /etc/ssh/sshd_config
-systemctl enable sshd
-systemctl start sshd
-
-

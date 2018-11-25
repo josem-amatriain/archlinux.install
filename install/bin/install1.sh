@@ -24,7 +24,6 @@ if [ $? -eq 0 ]; then true; else
     ip route show 
     
     ping -c5 archlinux.org
-    read x
 fi
 
 parted $PARTICION < disk/parted
