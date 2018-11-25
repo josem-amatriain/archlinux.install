@@ -1,10 +1,18 @@
 #!/bin/bash -x
 
-cd /install 
+MYDIR="/install"
+cd $MYDIR
+
 source etc/config.sh
 source etc/config.post.sh
 
-/install/network/install.network.sh
+#/install/network/install.network.sh
+for IFACE in $MYDIR/network/ifaces/*.sh
+do
+    IF0=$(basename $IFACE)
+    IF=$( echo $IF0 | cut -d'.' -f1)
+    systemctl status network@$IF
+done
 
 pacman --noconfirm -Suy
 pacman --noconfirm -Sy $PACKAGES

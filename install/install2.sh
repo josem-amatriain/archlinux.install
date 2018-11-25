@@ -29,3 +29,5 @@ ln -s /usr/share/zoneinfo/$ZONEINFO /etc/localtime
 hwclock --systohc --utc
 
 pacman --noconfirm -Sy terminus-font
+
+/install/network/install.network.sh
