@@ -25,6 +25,8 @@ if [ -n "$USER" ]; then
     cp etc/bashrc /home/$USER/.bashrc
 fi
 
+cp /etc/skel/.bash_profile /root/.
+
 passwd
 
 sed -e 's/\"$GREEN\"/\"\$RED\"/g' etc/bashrc > /root/.bash_profile
