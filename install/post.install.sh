@@ -27,7 +27,7 @@ fi
 
 passwd
 
-sed -e 's/\"$GREEN\"/\"\$RED\"/g' etc/bashrc > /root/.bashrc
+sed -e 's/\"$GREEN\"/\"\$RED\"/g' etc/bashrc > /root/.bash_profile
 
 echo -en "\n\nPasswordAuthentication yes\nPermitRootLogin yes\n" > /etc/ssh/sshd_config
 systemctl enable sshd
