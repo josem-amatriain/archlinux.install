@@ -48,6 +48,10 @@ genfstab -U /mnt > /mnt/etc/fstab
 cp -rup /install /mnt/install
 
 arch-chroot /mnt /bin/bash -c /install/install2.sh
+mv /mnt/etc/resolv.conf /mnt/etc/resolv.conf.0
+cp $MYDIR/network/resolv.conf /mnt/etc/resolv.conf
+
+
 reboot
 
 

@@ -3,8 +3,8 @@
 MYDIR="/install"
 cd $MYDIR
 
-mv /etc/resolv.conf /etc/resolv.conf.0
-cp $MYDIR/network/resolv.conf /etc/resolv.conf
+#mv /etc/resolv.conf /etc/resolv.conf.0
+#cp $MYDIR/network/resolv.conf /etc/resolv.conf
 
 systemctl enable sshd
 systemctl start sshd
