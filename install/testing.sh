@@ -3,16 +3,13 @@
 clear
 
 
-MYDIR="/tmp/install"
+MYDIR="/install"
 
 echo "$MYDIR==="
 
 source $MYDIR/etc/config.sh
-MYDIR="/tmp/install"
 source $MYDIR/etc/config.net.sh
-MYDIR="/tmp/install"
 source $MYDIR/etc/config.post.sh
-MYDIR="/tmp/install"
 
 echo arch-chroot /mnt
 
