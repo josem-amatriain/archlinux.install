@@ -18,7 +18,7 @@ echo -en "\n127.0.0.1  localhost.localdomain localhost\n$MYIP $HOSTNAME\n" >> /e
 
 mv /etc/resolv.conf /etc/resolv.conf.0
 cp $MYDIR/network/resolv.conf /etc/resolv.conf
-
+read x
 cp -p $MYDIR/network/$TARGET "/etc/systemd/system/$TARGET"
 
 mkdir -p /etc/conf.d

@@ -49,5 +49,6 @@ genfstab -U /mnt > /mnt/etc/fstab
 cp -rup /install /mnt/install
 
 arch-chroot /mnt /bin/bash -c /install/install2.sh
+reboot
 
 
