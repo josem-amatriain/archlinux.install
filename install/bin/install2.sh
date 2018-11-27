@@ -29,13 +29,12 @@ ln -s /usr/share/zoneinfo/$ZONEINFO /etc/localtime
 hwclock --systohc --utc
 
 pacman --noconfirm -S terminus-font openssh
-systemctl enable sshd
-#systemctl start sshd
-
 
 /install/bin/install.network.sh
 echo "Changing root password:"
 passwd
+
+/install/bin/install.ssh.sh
 
 cp /etc/skel/.bash_profile /root/.
 sed -e 's/\"$GREEN\"/\"\$RED\"/g' etc/bashrc > /root/.bash_profile
