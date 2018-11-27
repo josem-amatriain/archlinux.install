@@ -35,7 +35,7 @@ mkfs.fat -F32 ${PARTICION}1
 mkswap ${PARTICION}2
 swapon ${PARTICION}2
 
-mkfs.ext4 ${PARTICION}3
+mkfs.ext4 ${PARTICION}3 -L volRaiz -F
 mount ${PARTICION}3 /mnt
 mkdir /mnt/boot
 mount ${PARTICION}1 /mnt/boot
