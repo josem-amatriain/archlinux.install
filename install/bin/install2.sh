@@ -21,15 +21,21 @@ mv /etc/locale.gen /etc/locale.gen.0
 echo "$LOCALEGEN" > /etc/locale.gen
 locale-gen
 
-echo -en "\nLANG=$LANG\n" >> /etc/locale.conf
-
+#echo -en "\nLANG=$LANG\n" >> /etc/locale.conf
+echo "$LOCALECONF" >> /etc/locale.conf
 
 rm -f /etc/localtime
 ln -s /usr/share/zoneinfo/$ZONEINFO /etc/localtime
 hwclock --systohc --utc
 
-pacman --noconfirm -Sy terminus-font
+pacman --noconfirm -S terminus-font openssh
+systemctl enable sshd
+#systemctl start sshd
+
 
 /install/bin/install.network.sh
 echo "Changing root password:"
 passwd
+
+cp /etc/skel/.bash_profile /root/.
+sed -e 's/\"$GREEN\"/\"\$RED\"/g' etc/bashrc > /root/.bash_profile

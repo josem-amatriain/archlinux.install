@@ -6,10 +6,6 @@ cd $MYDIR
 #mv /etc/resolv.conf /etc/resolv.conf.0
 #cp $MYDIR/network/resolv.conf /etc/resolv.conf
 
-systemctl enable sshd
-systemctl start sshd
-
-
 source etc/config.sh
 source etc/config.post.sh
 
@@ -37,6 +33,5 @@ if [ -n "$USER" ]; then
     cp etc/bashrc /home/$USER/.bashrc
 fi
 
-cp /etc/skel/.bash_profile /root/.
-
-sed -e 's/\"$GREEN\"/\"\$RED\"/g' etc/bashrc > /root/.bash_profile
+#cp /etc/skel/.bash_profile /root/.
+#sed -e 's/\"$GREEN\"/\"\$RED\"/g' etc/bashrc > /root/.bash_profile
