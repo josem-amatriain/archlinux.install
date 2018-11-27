@@ -80,7 +80,9 @@ clear
 
 echo -en "\n\n   $BLUE FSTAB $DEF.\n\n"
 cat /etc/fstab
-echo -en "\n\n\n\n"
+echo -en "\n\n"
+swapon
+echo -en "\n\n"
 
 echo -en "\n\n   $BLUE pacman mirrors and install folder: $DEF.\n\n"
 ls -l /etc/pacman.d/mirror*
