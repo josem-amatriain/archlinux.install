@@ -43,7 +43,7 @@ mount ${PARTICION}1 /mnt/boot
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.0
 cp -p network/mirrorlist /etc/pacman.d/mirrorlist
 
-pacstrap -i /mnt base mc
+pacstrap /mnt  --noconfirm  base mc
 genfstab -U /mnt > /mnt/etc/fstab 
 cp -rup /install /mnt/install
 
