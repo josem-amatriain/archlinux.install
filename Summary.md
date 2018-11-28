@@ -20,7 +20,7 @@ ssh root@192.168.1.2
 wget https://github.com/josem-amatriain/archlinux.install/archive/master.tar.gz
 
 # you must decompress and put the install directory at /install
-/install/install1.sh 
+/install/bin/install1.sh 
 ```
 
 # REBOOT
@@ -28,6 +28,6 @@ wget https://github.com/josem-amatriain/archlinux.install/archive/master.tar.gz
 1. reboot
 1. Log IN as root without password
 1. cd /install
-1. ./post.install.sh
+1. ./bin/post.install.sh
 
 
