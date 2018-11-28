@@ -37,4 +37,4 @@ passwd
 /install/bin/install.ssh.sh
 
 cp /etc/skel/.bash_profile /root/.
-sed -e 's/\"$GREEN\"/\"\$RED\"/g' etc/bashrc > /root/.bash_profile
+sed -e 's/\"$GREEN\"/\"\$RED\"/g' etc/bashrc > /root/.bashrc
