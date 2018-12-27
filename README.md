@@ -34,6 +34,10 @@ You must to unplug and plug the usb device. The device will be recognized and yo
 
 ```
 setfont iso01-12x22.psfu.gz
+# or simply
+setfont iso01-12x22
+# others: ls -l /usr/share/kbd/consolefonts
+setfont Lat2-Terminus16
 ``` 
 The fonts available are in /usr/share/fonts/local/
 The /etc/vconsole file sets the console font in the installed system.
