@@ -34,18 +34,20 @@ You must to unplug and plug the usb device. The device will be recognized and yo
 
 ```
 setfont iso01-12x22.psfu.gz
+# or simply
+setfont iso01-12x22
+# others: ls -l /usr/share/kbd/consolefonts
+setfont Lat2-Terminus16
 ``` 
-The fonts available are in /usr/share/fonts/local/
-The /etc/vconsole file sets the console font in the installed system.
-
-
-More fonts are available in the postinstallation process:
-
+The fonts are available after installation at /usr/share/fonts/local/
+The /etc/vconsole file sets the console font in the installed system, after reboot. More fonts are available in the postinstallation process. 
 ```
 pacman -Sy terminus-font 
 pacman -Ql terminus-font
 setfont ter-v32n
 ```
+
+But now, this is not important for our immediate purpose that is to begin the installation.
 
 ## Keyboard
 
@@ -60,6 +62,8 @@ loadkeys uk
 
 
 ## Installing network manual mode
+
+You must change the network device name (eth0) to match your system (for example, enp1s0).  
 
 ```
 ip addr add 192.168.1.444/24 dev eth0
@@ -81,8 +85,9 @@ passwd 123456
 123456
 ```
 
-You have two machines, the machine to install and the desktop/personal machine.
-You must download the repository with git in your personal machine. 
+You have two machines, the machine on which you are going to install and the desktop/personal machine.
+You must download the repository with git in your personal machine and transfer it compressed to the instalation machine. Or you can download in de installation machine using ```wget```
+
 
 # Install
 
@@ -103,7 +108,7 @@ You must config etc/config.sh to your settings.
 The repository has two main scripts: ```install1.sh``` and ```install2.sh```
 The first one, makes a basic install. The second one permits booting in the new fresh system and complete the installation.
 
-In the destination machine, at the ```/tmp``` directory you must decompress the ```install.tar.gz```. You can use ```mc``` command. You must create the ```/tmp/install``` folder and execute ```/tmp/install/install1.sh```
+In the destination machine, at the ```/tmp``` directory you must decompress the ```install.tar.gz```. You can use ```mc``` command. You must copy the ```/install``` folder from compressed file, and execute ```/install/install1.sh```
 
 The last command in the script ```install1.sh``` is the exeution of ```install2.sh```.
 ```
