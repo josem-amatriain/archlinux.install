@@ -1,0 +1,39 @@
+## mdadm
+
+mdadm --misc --zero-superblock /dev/sda
+mdadm --misc --zero-superblock /dev/sda1
+
+mdadm --create --verbose --level=5 --metadata=1.2 --chunk=256 --raid-devices=4 /dev/md0 /dev/sda1 /dev/sdb1 /dev/sdc1 /dev/sdd1 --spare-devices=1 /dev/sdf1
+mdadm --create --verbose --level=5 --metadata=1.2 --chunk=256 --raid-devices=3 /dev/md0 /dev/sdb1 /dev/sdc1 /dev/sdd1 --spare-devices=1 /dev/sda1
+
+mdadm --examine /dev/sdb /dev/sdc
+SHOW INFO
+lsblk
+cat /proc/mdstat
+mdadm --examine /dev/sda1
+
+
+Quitar
+mdadm --stop /dev/md0
+mdadm --fail /dev/md0 /dev/sdd1
+mdadm --remove /dev/md0 /dev/sdd1
+
+Poner
+mdadm --manage --add /dev/md0 /dev/sdd1
+
+
+
+gdisk:  RAID partition type= FD00
+UEFI boot partition = EF00
+
+
+https://superuser.com/questions/603481/how-do-i-reactivate-my-mdadm-raid5-array
+
+
+mdadm --detail /dev/md0
+
+
+
+reinicio:
+mdadm --assemble 
+
