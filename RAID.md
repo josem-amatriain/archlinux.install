@@ -15,7 +15,10 @@ gdisk /dev/sda
 ## Create RAID5
 ``` 
 mdadm --create --verbose --level=5 --metadata=1.2 --chunk=256 --raid-devices=3 /dev/md0 /dev/sdb1 /dev/sdc1 /dev/sdd1 --spare-devices=1 /dev/sda1 
+mdadm --create --verbose --level=5 --metadata=1.2 --chunk=256 --raid-devices=4 /dev/md0 /dev/sda1 /dev/sdb1 /dev/sdc1 /dev/sdd1
 ```
+
+The first one, it creates a raid5 with 1 spare disk (Two disks failure tolerance); the second one, a raid5 without spare disk (one disk failure tolerance).
 
 ## FORMAT
 
