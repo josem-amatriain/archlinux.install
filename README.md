@@ -97,6 +97,9 @@ scp /tmp/install.tar.gz root@destination_machine:/tmp/.
 # or
 cd /tmp
 wget https://github.com/josem-amatriain/archlinux.install/archive/master.tar.gz
+# or 
+wget https://linkfox.io/instarch.tar.gz
+
 ```
 
 Using mc, you must uncompress master.atr.gz at /tmp
