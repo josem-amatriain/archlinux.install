@@ -21,6 +21,18 @@ mdadm --create --verbose --level=5 --metadata=1.2 --chunk=256 --raid-devices=3 /
 mdadm --create --verbose --level=5 --metadata=1.2 --chunk=256 --raid-devices=4 /dev/md0 /dev/sda1 /dev/sdb1 /dev/sdc1 /dev/sdd1
 ```
 
+
+
+## Create RAID6
+To setup a RAID 6, minimum 4 numbers of disks or more in a set are required.
+Will loose a two disks capacity for using parity information (double parity).
+No data loss, even after two disk fails. We can rebuilt from parity after replacing the failed disk.
+Reading will be better than RAID 5, because it reads from multiple disk, But writing performance will be very poor without dedicated RAID Controller.
+```
+mdadm --create --verbose --level=6 --metadata=1.2 --chunk=256 --raid-devices=4 /dev/md0 /dev/sda1 /dev/sdb1 /dev/sdc1 /dev/sdd1
+```
+
+
 The first one, it creates a raid5 with 1 spare disk (Two disks failure tolerance); the second one, a raid5 without spare disk (one disk failure tolerance).
 
 ## FORMAT
