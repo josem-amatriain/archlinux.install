@@ -118,4 +118,12 @@ The last command in the script ```install1.sh``` is the exeution of ```install2.
 arch-chroot /mnt /bin/bash -c /install/install2.sh
 ```
 
+# Customization
+```
+/home /dev/sda
+/ /dev/sdb 
+/var/lib/docker /dev/sdc
+/usr/local /dev/sdd
+```
+
 
