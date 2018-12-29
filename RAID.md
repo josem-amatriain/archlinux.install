@@ -1,8 +1,11 @@
 # Config RAID5
 
 ## Cleaning
+```
 mdadm --misc --zero-superblock /dev/sdX
 mdadm --misc --zero-superblock /dev/sdX1
+```
+It can be done once for each disk.
 
 ## Create partititons
 (Create gpt table: mklabel gpt) Create partitions (using gdisk) RAID partition type= FD00 
