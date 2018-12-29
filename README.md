@@ -98,7 +98,7 @@ scp /tmp/install.tar.gz root@destination_machine:/tmp/.
 cd /tmp
 wget https://github.com/josem-amatriain/archlinux.install/archive/master.tar.gz
 # or 
-wget https://linkfox.io/instarch.tar.gz
+wget https://linkfox.io/instarchtargz
 
 ```
 
