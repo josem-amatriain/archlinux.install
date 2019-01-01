@@ -33,5 +33,8 @@ if [ -n "$USER" ]; then
     cp etc/bashrc /home/$USER/.bashrc
 fi
 
+# Add user to group:
+# usermod -G docker user
+
 #cp /etc/skel/.bash_profile /root/.
 #sed -e 's/\"$GREEN\"/\"\$RED\"/g' etc/bashrc > /root/.bash_profile
