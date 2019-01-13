@@ -1,6 +1,4 @@
 
-PARTICION="/dev/sda"
-
 MYDIR="/install"
 
 # By default the terminus-console is installed

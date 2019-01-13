@@ -1,0 +1,15 @@
+parted -s /dev/sdd mklabel gpt
+pacman -S btrfs-progs
+
+sgdisk -n 1:2048:$(sgdisk -E /dev/sdd) /dev/sdd
+mkfs.btrfs -f /dev/sdd1
+
+
+
+gdisk /dev/sdd < gdisk.completo
+
+
+gdisk /dev/sdd < gdisk.delete.disk
+gdisk /dev/sdd < gdisk.boot
+gdisk /dev/sdd < gdisk.swap
+gdisk /dev/sdd < gdisk.root

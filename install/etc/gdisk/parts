@@ -1,0 +1,6 @@
+fat /dev/sda1 boot /boot JmBootUEFI
+swap /dev/sda2 swap swap JmSwap
+ext4 /dev/sda3 root /home JmHome
+btrfs /dev/sdb1 root /var/lib/docker JmDocker
+xfs /dev/sdc1 root /tmp JmTmp
+reiserfs /dev/sdd1 root / JmRootSystemArch
