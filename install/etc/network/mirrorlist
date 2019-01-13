@@ -1,0 +1,50 @@
+#
+## Arch Linux repository mirrorlist
+## Sorted by mirror score from mirror status page
+## Generated on 2016-10-01
+##
+
+## Score: 0.2, France
+Server = http://archlinux.polymorf.fr/$repo/os/$arch
+## Score: 0.3, France
+Server = http://arch.tamcore.eu/$repo/os/$arch
+## Score: 0.3, Germany
+#Server = http://mirrors.cicku.me/archlinux/$repo/os/$arch
+## Score: 0.3, Czech Republic
+#Server = http://ftp.sh.cvut.cz/arch/$repo/os/$arch
+## Score: 0.3, Germany
+Server = http://mirror.js-webcoding.de/pub/archlinux/$repo/os/$arch
+## Score: 0.4, Netherlands
+Server = http://ftp.nluug.nl/os/Linux/distr/archlinux/$repo/os/$arch
+## Score: 0.4, Poland
+Server = http://mirror.chmuri.net/archmirror/$repo/os/$arch
+## Score: 0.4, Bulgaria
+Server = http://mirrors.uni-plovdiv.net/archlinux/$repo/os/$arch
+## Score: 0.4, France
+Server = http://mirror.tyborek.pl/arch/$repo/os/$arch
+## Score: 0.4, Germany
+Server = http://mirror.hactar.xyz/$repo/os/$arch
+## Score: 0.5, Germany
+Server = http://mirror.f4st.host/archlinux/$repo/os/$arch
+## Score: 0.5, Switzerland
+Server = http://pkg.adfinis-sygroup.ch/archlinux/$repo/os/$arch
+## Score: 0.5, Czech Republic
+Server = http://gluttony.sin.cvut.cz/arch/$repo/os/$arch
+## Score: 0.5, Sweden
+Server = http://ftp.myrveln.se/pub/linux/archlinux/$repo/os/$arch
+## Score: 0.6, Norway
+Server = http://mirror.archlinux.no/$repo/os/$arch
+## Score: 0.6, Norway
+Server = http://mirror.neuf.no/archlinux/$repo/os/$arch
+## Score: 0.7, Russia
+Server = http://mirrors.prok.pw/archlinux/$repo/os/$arch
+## Score: 0.7, Bosnia and Herzegovina
+Server = http://burek.archlinux.ba/$repo/os/$arch
+## Score: 0.7, France
+Server = http://fooo.biz/archlinux/$repo/os/$arch
+## Score: 0.7, France
+Server = http://arch.yourlabs.org/$repo/os/$arch
+## Score: 0.7, United Kingdom
+Server = http://archlinux.mirrors.uk2.net/$repo/os/$arch
+## Score: 0.8, Germany
+Server = http://mirror.de.leaseweb.net/archlinux/$repo/os/$arch
