@@ -3,17 +3,17 @@
 clear
 
 # LOAD parameters
-source etc/config.sh
+source /install/etc/config.sh
 cd $MYDIR
 
 # initial setup
 timedatectl set-ntp true
 
 # network setup
-source bin/stage1/network.manual.install.sh 
+source $MYDIR/bin/stage1/network.manual.install.sh 
 
 # partitioning
-source bin/stage1/partitioning.sh 
+source $MYDIR/bin/stage1/partitioning.sh 
 
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.0
 cp -p $MYDIR/etc/network/mirrorlist /etc/pacman.d/mirrorlist
