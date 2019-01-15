@@ -3,7 +3,7 @@
 
 MYPATH="$MYDIR/etc/gdisk"
 
-for DISK in $( $MYDIR/etc/gdisk/disks ); do
+for DISK in $( cat $MYDIR/etc/gdisk/disks ); do
 	gdisk $DISK < $MYPATH/gdisk.delete.disk
 done
 
