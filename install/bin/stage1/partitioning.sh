@@ -11,11 +11,12 @@ done
 INPUTFILE="$MYDIR/etc/gdisk/parts"
 exec < $INPUTFILE
 
-while read FS DEVICE TYPE MOUNTPOINT LABEL
+while read FS DISK DEVICE TYPE MOUNTPOINT LABEL INI END
 do
 	PREFIX="/mnt"
-	DISK=$( echo $DEVICE | grep -o '/dev/[a-z]*' )
-	gdisk $DISK < $MYDIR/etc/gdisk/gdisk.$TYPE 
+#	DISK=$( echo $DEVICE | grep -o '/dev/[a-z]*' )
+#	gdisk $DISK < $MYDIR/etc/gdisk/gdisk.$TYPE 
+	$MYDIR/bin/stage1/parted.$TYPE.sh $DEVICE $FS $TYPE $LABEL $INI $END
 	$MYDIR/bin/stage1/format.$FS.sh $DEVICE $FS $TYPE $LABEL
 	mkdir -p /mnt$MOINTPOINT
 	mount -t $FS $DEVICE /mnt$MOUNTPOINT

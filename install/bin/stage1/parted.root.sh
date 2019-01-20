@@ -10,8 +10,9 @@ LABEL=$4
 INI=$5
 END=$6
 
-parted $DISK mkpart $LABEL fat32 $INI $END
-parted $DISK set $DEVICE esp on
+parted $DISK mkpart $LABEL $FS 0% 225M
+parted $DISK name $DEVICE $LABEL
+
 
 # Parted syntax:
 #	FS-TYPE is one of: btrfs, nilfs2, ext4, ext3, ext2, fat32, fat16, hfsx, hfs+, hfs, jfs, swsusp, linux-swap(v1), linux-swap(v0), ntfs, reiserfs, hp-ufs, sun-ufs, xfs,
