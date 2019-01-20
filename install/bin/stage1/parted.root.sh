@@ -9,6 +9,7 @@ TYPE=$3
 LABEL=$4
 INI=$5
 END=$6
+DISK=$7
 
 parted $DISK mkpart $LABEL $FS 0% 225M
 parted $DISK name $DEVICE $LABEL

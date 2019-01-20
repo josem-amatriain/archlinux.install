@@ -9,6 +9,7 @@ TYPE=$3
 LABEL=$4
 INI=$5
 END=$6
+DISK=$7
 
 parted $DISK mkpart $LABEL fat32 $INI $END
 parted $DISK set $DEVICE esp on

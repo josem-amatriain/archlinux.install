@@ -16,7 +16,7 @@ do
 	PREFIX="/mnt"
 #	DISK=$( echo $DEVICE | grep -o '/dev/[a-z]*' )
 #	gdisk $DISK < $MYDIR/etc/gdisk/gdisk.$TYPE 
-	$MYDIR/bin/stage1/parted.$TYPE.sh $DEVICE $FS $TYPE $LABEL $INI $END
+	$MYDIR/bin/stage1/parted.$TYPE.sh $DEVICE $FS $TYPE $LABEL $INI $END $DISK
 	$MYDIR/bin/stage1/format.$FS.sh $DEVICE $FS $TYPE $LABEL
 	mkdir -p /mnt$MOINTPOINT
 	mount -t $FS $DEVICE /mnt$MOUNTPOINT
