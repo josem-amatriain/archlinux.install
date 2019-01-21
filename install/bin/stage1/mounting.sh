@@ -1,5 +1,6 @@
 #!/bin/bash -x
 
+MYDIR="/install"
 source "$MYDIR/etc/root.partition"
 source "$MYDIR/etc/boot.partition"
 

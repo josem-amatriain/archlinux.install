@@ -2,11 +2,13 @@
 
 clear
 
-
-source etc/config.sh
-source etc/config.post.sh
+MYDIR="/install"
 
 cd $MYDIR
+
+source $MYDIR/etc/config.sh
+source $MYDIR/etc/config.post.sh
+
 pacman --noconfirm  -Sy
 
 

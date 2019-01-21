@@ -25,14 +25,14 @@ do
 	$MYDIR/bin/stage1/format.$FS.sh $DISK$DEVICE $FS $TYPE $LABEL
 #	mkdir -p /mnt$MOUNTPOINT
 #	mount -t $FS $DISK$DEVICE /mnt$MOUNTPOINT
-	if [ "$TYPE" -eq "root" ]; then
+	if [ "$TYPE" == "root" ]; then
 		echo -en "ROOT_PARTITION=$DISK$DEVICE\nROOT_FS=$FS" > "$MYDIR/etc/root.partition"
 	fi
-	if [ "$TYPE" -eq "other" ]; then
+	if [ "$TYPE" == "other" ]; then
 		echo "$DISK$DEVICE $FS $MOUNTPOINT" >> "$MYDIR/etc/other.partition"
 	fi
-	if [ "$TYPE" -eq "boot" ]; then
-		echo "BOOT_PARTITION=$DEVICE" > "$MYDIR/etc/boot.partition"
+	if [ "$TYPE" == "boot" ]; then
+		echo "BOOT_PARTITION=$DISK$DEVICE" > "$MYDIR/etc/boot.partition"
 	fi
 done
 
