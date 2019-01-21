@@ -11,7 +11,7 @@ INI=$5
 END=$6
 DISK=$7
 
-parted $DISK mkpart $LABEL $FS $INI $FIN
+parted $DISK mkpart $LABEL linux-$FS $INI $END
 
 
 # Parted syntax:

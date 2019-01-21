@@ -11,7 +11,7 @@ INI=$5
 END=$6
 DISK=$7
 
-parted $DISK mkpart $LABEL $FS 0% 225M
+parted $DISK mkpart $LABEL $FS $INI $END
 parted $DISK name $DEVICE $LABEL
 
 

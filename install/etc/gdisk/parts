@@ -1,6 +1,6 @@
-fat /dev/sda 1 boot /boot JmBootUEFI 0% 400MB
-swap /dev/sda 2 swap swap JmSwap 400MB 1400MB
-ext4 /dev/sda 3 root /home JmHome 1400MB 100%
-btrfs /dev/sdb 1 root /var/lib/docker JmDocker 0% 100%
-xfs /dev/sdc 1 root /tmp JmTmp 0% 100%
+ext4 /dev/sda 1 other /home JmHome 0% 98%
+fat /dev/sda 2 boot /boot JmBootUEFI 98% 99%
+swap /dev/sda 3 swap swap JmSwap 99% 100%
+btrfs /dev/sdb 1 other /var/lib/docker JmDocker 0% 100%
+xfs /dev/sdc 1 other /tmp JmTmp 0% 100%
 reiserfs /dev/sdd 1 root / JmRootSystemArch 0% 100%
