@@ -1,7 +1,12 @@
 #!/bin/bash -x
 
+# LOAD parameters
+source /install/etc/config.sh
+cd $MYDIR
 
 MYPATH="$MYDIR/etc/gdisk"
+
+rm "$MYDIR/etc/*.partition"
 
 source $MYPATH/disks
 for DISK in $DISKS; do
@@ -17,9 +22,15 @@ do
 #	DISK=$( echo $DEVICE | grep -o '/dev/[a-z]*' )
 #	gdisk $DISK < $MYDIR/etc/gdisk/gdisk.$TYPE 
 	$MYDIR/bin/stage1/parted.$TYPE.sh $DEVICE $FS $TYPE $LABEL $INI $END $DISK
-	$MYDIR/bin/stage1/format.$FS.sh $DEVICE $FS $TYPE $LABEL
-	mkdir -p /mnt$MOINTPOINT
-	mount -t $FS $DEVICE /mnt$MOUNTPOINT
+	$MYDIR/bin/stage1/format.$FS.sh $DISK$DEVICE $FS $TYPE $LABEL
+#	mkdir -p /mnt$MOUNTPOINT
+#	mount -t $FS $DISK$DEVICE /mnt$MOUNTPOINT
+	if [ "$TYPE" -eq "root" ]; then
+		echo -en "ROOT_PARTITION=$DISK$DEVICE\nROOT_FS=$FS" > "$MYDIR/etc/root.partition"
+	fi
+	if [ "$TYPE" -eq "other" ]; then
+		echo "$DISK$DEVICE $FS $MOUNTPOINT" >> "$MYDIR/etc/other.partition"
+	fi
 	if [ "$TYPE" -eq "boot" ]; then
 		echo "BOOT_PARTITION=$DEVICE" > "$MYDIR/etc/boot.partition"
 	fi

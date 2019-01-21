@@ -13,7 +13,9 @@ timedatectl set-ntp true
 source $MYDIR/bin/stage1/network.manual.install.sh 
 
 # partitioning
-source $MYDIR/bin/stage1/partitioning.sh 
+$MYDIR/bin/stage1/partitioning.sh 
+# partitioning
+$MYDIR/bin/stage1/mounting.sh 
 
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.0
 cp -p $MYDIR/etc/network/mirrorlist /etc/pacman.d/mirrorlist
