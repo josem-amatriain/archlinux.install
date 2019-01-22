@@ -4,6 +4,13 @@ MYDIR="/install"
 source "$MYDIR/etc/root.partition"
 source "$MYDIR/etc/boot.partition"
 
+source $MYPATH/disks
+for DISK in $DISKS; do
+	partx -u $DISK
+done
+
+
+
 mount $ROOT_PARTITION /mnt
 mkdir -p /mnt/boot
 mount $BOOT_PARTITION /mnt/boot
