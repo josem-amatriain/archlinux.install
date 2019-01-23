@@ -4,7 +4,7 @@ MYDIR="/install"
 source "$MYDIR/etc/root.partition"
 source "$MYDIR/etc/boot.partition"
 
-source $MYPATH/disks
+source $MYDIR/etc/gdisk/disks
 for DISK in $DISKS; do
 	partx -u $DISK
 done

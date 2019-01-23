@@ -10,6 +10,8 @@ source $MYDIR/etc/config.sh
 source $MYDIR/etc/config.post.sh
 
 pacman --noconfirm  -Sy
+pacstrap /mnt --noconfirm archlinux-keyring
+pacman-key --refresh-keys
 
 
 # INSTALLING BOOT
@@ -30,7 +32,6 @@ echo "Changing root password:"
 passwd
 
 $MYDIR/bin/stage2/install.ssh.sh
-
 
 # INSTALLING home
 cp /etc/skel/.bash_profile /root/.
