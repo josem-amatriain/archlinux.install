@@ -9,9 +9,8 @@ cd $MYDIR
 source $MYDIR/etc/config.sh
 source $MYDIR/etc/config.post.sh
 
-pacman --noconfirm  -Sy
-pacstrap /mnt --noconfirm archlinux-keyring
-pacman-key --refresh-keys
+pacman --noconfirm  -Sy archlinux-keyring
+#pacman-key --refresh-keys
 
 
 # INSTALLING BOOT
