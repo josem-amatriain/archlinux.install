@@ -9,7 +9,7 @@ cd $MYDIR
 source etc/config.sh
 source etc/config.post.sh
 
-for IFACE in $MYDIR/network/ifaces/*.sh
+for IFACE in $MYDIR/etc/network/ifaces/*.sh
 do
     IF0=$(basename $IFACE)
     IF=$( echo $IF0 | cut -d'.' -f1)

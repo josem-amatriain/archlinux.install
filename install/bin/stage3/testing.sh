@@ -122,7 +122,7 @@ read x
 clear
 echo -en "\n\n   $BLUE SystemCTL Network settings $DEF.\n\n"
 ls -l /etc/systemd/system /etc/conf.d/
-for IFACE in $MYDIR/network/ifaces/*.sh
+for IFACE in $MYDIR/etc/network/ifaces/*.sh
 do
     IF0=$(basename $IFACE)
     IF=$( echo $IF0 | cut -d'.' -f1)
