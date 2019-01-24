@@ -1,4 +1,4 @@
 fat /dev/sda 1 boot /boot JmHome 0% 1%
-xfs /dev/sda 2 other /boot JmBoot 1% 100%
+xfs /dev/sda 2 other /home JmBoot 1% 100%
 xfs /dev/sdb 1 other /var/lib/docker JmDocker 0% 100%
 reiserfs /dev/sdc 1 root / JmRoot 0% 100%

@@ -36,7 +36,6 @@ fi
 
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.0
 cp -p $MYDIR/etc/network/mirrorlist /etc/pacman.d/mirrorlist
-genfstab -U /mnt > /mnt/etc/fstab 
 cp -rup /install /mnt/install
 
 if [ -z "$DEBUG" ]; then true
@@ -59,6 +58,7 @@ arch-chroot /mnt /bin/bash -c /tmp/install/bin/stage2/install.sh
 
 mv /mnt/etc/resolv.conf /mnt/etc/resolv.conf.0
 cp $MYDIR/etc/network/resolv.conf /mnt/etc/resolv.conf
+genfstab -U /mnt > /mnt/etc/fstab 
 
 echo "REBOOT???"
 #reboot
