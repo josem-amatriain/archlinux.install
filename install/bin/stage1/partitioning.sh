@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 # LOAD parameters
-source /install/etc/config.sh
+source /tmp/install/etc/config.sh
 cd $MYDIR
 
 MYPATH="$MYDIR/etc/gdisk"
