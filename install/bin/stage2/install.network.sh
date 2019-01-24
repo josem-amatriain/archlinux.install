@@ -1,12 +1,10 @@
-#!/bin/bash -x
-
-
-
-
+#!/bin/bash
 
 MYDIR="/install"
 source $MYDIR/etc/config.sh
+MYDIR="/install"
 source $MYDIR/etc/config.net.sh
+MYDIR="/install"
 
 cd $MYDIR
 

@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 pacman --noconfirm -S openssh
 

@@ -115,11 +115,11 @@ You must config etc/config.sh to your settings.
 The repository has two main scripts: ```install1.sh``` and ```install2.sh```
 The first one, makes a basic install. The second one permits booting in the new fresh system and complete the installation.
 
-In the destination machine, at the ```/tmp``` directory you must decompress the ```install.tar.gz```. You can use ```mc``` command. You must copy the ```/install``` folder from compressed file, and execute ```/install/install1.sh```
+In the destination machine, at the ```/tmp``` directory you must decompress the ```install.tar.gz```. You can use ```mc``` command. You must copy the ```/tmp/install``` folder from compressed file, and execute ```/tmp/install/install1.sh```
 
 The last command in the script ```install1.sh``` is the exeution of ```install2.sh```.
 ```
-arch-chroot /mnt /bin/bash -c /install/install2.sh
+arch-chroot /mnt /bin/bash -c /tmp/install/install2.sh
 ```
 
 # Customization

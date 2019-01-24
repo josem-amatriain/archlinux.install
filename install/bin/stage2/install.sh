@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 clear
 
@@ -7,7 +7,9 @@ MYDIR="/install"
 cd $MYDIR
 
 source $MYDIR/etc/config.sh
+MYDIR="/install"
 source $MYDIR/etc/config.post.sh
+MYDIR="/install"
 
 pacman --noconfirm  -Sy archlinux-keyring
 #pacman-key --refresh-keys

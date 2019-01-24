@@ -3,7 +3,7 @@
 clear
 
 # LOAD parameters
-source /install/etc/config.sh
+source /tmp/install/etc/config.sh
 cd $MYDIR
 
 # initial setup
@@ -55,7 +55,7 @@ else
     clear
 fi
 
-arch-chroot /mnt /bin/bash -c /install/bin/stage2/install.sh
+arch-chroot /mnt /bin/bash -c /tmp/install/bin/stage2/install.sh
 
 mv /mnt/etc/resolv.conf /mnt/etc/resolv.conf.0
 cp $MYDIR/etc/network/resolv.conf /mnt/etc/resolv.conf
