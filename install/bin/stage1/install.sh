@@ -36,7 +36,7 @@ fi
 
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.0
 cp -p $MYDIR/etc/network/mirrorlist /etc/pacman.d/mirrorlist
-cp -rup /install /mnt/install
+cp -rup /tmp/install /mnt/install
 
 if [ -z "$DEBUG" ]; then true
 else
