@@ -123,6 +123,8 @@ arch-chroot /mnt /bin/bash -c /install/install2.sh
 ```
 
 # Customization
+File "parts" must finish with a new line.
+
 ```
 /home /dev/sda
 / /dev/sdb 
