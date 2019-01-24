@@ -1,4 +1,7 @@
 
+DEBUG=debug
+LOG=/tmp/debug.install.log
+
 MYDIR="/install"
 
 # By default the terminus-console is installed
@@ -33,3 +36,9 @@ ZONEINFO="Europe/Madrid"
 
 
 
+if [ -z "$DEBUG" ]; then true
+else
+	exec 1>$LOG
+	exec 2>&1
+	set -x
+fi

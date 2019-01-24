@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 clear
 
@@ -13,25 +13,24 @@ timedatectl set-ntp true
 source $MYDIR/bin/stage1/network.manual.install.sh 
 # partitioning
 if [ -z "$DEBUG" ]; then true
-    else echo "Beggining partition process?? Enter to continue..."; read x; clear
+    else echo "Beggining partition process?? Enter to continue..."; clear
 fi
 clear
-$MYDIR/bin/stage1/partitioning.sh 
+$MYDIR/bin/stage1/partitioning.sh >> $LOG 2>&1
 
 if [ -z "$DEBUG" ]; then true
 else
 echo "Partitions created. Enter to continue"
-read x
 fi
 clear
 # mounting
-$MYDIR/bin/stage1/mounting.sh 
+$MYDIR/bin/stage1/mounting.sh  >> $LOG 2>&1
 
 if [ -z "$DEBUG" ]; then true
 else
     mount | grep '/dev/sd'
     echo "Mounted devices? . Enter to continue"
-    read x
+    
     clear
 fi
 
@@ -43,7 +42,7 @@ cp -rup /install /mnt/install
 if [ -z "$DEBUG" ]; then true
 else
     echo "Begining intallation of packages. Enter to continue"
-    read x
+    
 fi
 clear
 
@@ -52,7 +51,7 @@ $MYDIR/bin/stage1/pacman.sh
 if [ -z "$DEBUG" ]; then true
 else
     echo "Installation of packages DONE?. Begining chroot: Enter to continue"
-    read x
+    
     clear
 fi
 
@@ -62,5 +61,4 @@ mv /mnt/etc/resolv.conf /mnt/etc/resolv.conf.0
 cp $MYDIR/etc/network/resolv.conf /mnt/etc/resolv.conf
 
 echo "REBOOT???"
-read x 
-reboot
+#reboot
