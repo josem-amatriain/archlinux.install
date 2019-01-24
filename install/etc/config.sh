@@ -1,6 +1,6 @@
 
 DEBUG=debug
-LOG=/tmp/debug.install.log
+LOG=/tmp/debug.install.$(basename $0).log
 
 MYDIR="/install"
 
