@@ -38,6 +38,7 @@ ZONEINFO="Europe/Madrid"
 
 if [ -z "$DEBUG" ]; then true
 else
+	alias clear='echo ""'
 	exec 1>$LOG
 	exec 2>&1
 	set -x
