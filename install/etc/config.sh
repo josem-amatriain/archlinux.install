@@ -32,7 +32,8 @@ LC_ALL=
 
 ZONEINFO="Europe/Madrid"
 
-
+HOSTNAME="panzer"
+MYIP="192.168.1.123"
 
 
 

@@ -15,7 +15,7 @@ echo "
 address=$MYIP
 netmask=$MYMASK
 broadcast=$BROADCAST
-gateway=$GW
+#gateway=$GW
 
 " > $TARGET
 

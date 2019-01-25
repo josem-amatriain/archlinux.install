@@ -1,17 +1,16 @@
-#!/bin/bash
+#!/bin/bash -x
 
 clear
-
 
 MYDIR="/install"
 
 echo "$MYDIR==="
 
 source $MYDIR/etc/config.sh
-source $MYDIR/etc/config.net.sh
+#source $MYDIR/etc/config.net.sh
 source $MYDIR/etc/config.post.sh
 
-echo arch-chroot /mnt
+# echo arch-chroot /mnt
 
 if [ -a "$MYDIR/etc/bashrc.0" ]; then 
     source $MYDIR/etc/bashrc.0

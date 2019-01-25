@@ -25,7 +25,7 @@ source $MYDIR/bin/stage2/install.locales.sh
 source $MYDIR/bin/stage2/install.time.sh 
 
 # INSTALLING NETWORK
-$MYDIR/bin/install.network.sh
+$MYDIR/bin/stage2/install.network.sh
 
 
 
