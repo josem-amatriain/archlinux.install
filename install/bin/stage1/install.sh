@@ -36,7 +36,6 @@ fi
 
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.0
 cp -p $MYDIR/etc/network/mirrorlist /etc/pacman.d/mirrorlist
-cp -rup /tmp/install /mnt/install
 
 if [ -z "$DEBUG" ]; then true
 else
@@ -54,7 +53,9 @@ else
     clear
 fi
 
-arch-chroot /mnt /bin/bash -c /tmp/install/bin/stage2/install.sh
+cp -rup /tmp/install /mnt/install
+# stage2 must be at /mnt/install... Chroot finds it at /install/...
+arch-chroot /mnt /bin/bash -c /install/bin/stage2/install.sh
 
 mv /mnt/etc/resolv.conf /mnt/etc/resolv.conf.0
 cp $MYDIR/etc/network/resolv.conf /mnt/etc/resolv.conf
