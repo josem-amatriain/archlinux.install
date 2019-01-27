@@ -6,7 +6,7 @@ cd $MYDIR
 
 MYPATH="$MYDIR/etc/gdisk"
 
-rm "$MYDIR/etc/*.partition"
+rm "$MYDIR/etc/*.partition" 2> /dev/null
 
 source $MYPATH/disks
 for DISK in $DISKS; do
