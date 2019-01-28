@@ -1,5 +1,8 @@
 #!/bin/bash -x
 
+source /install/etc/config.stage2.sh
+cd $MYDIR
+
 bootctl --path=/boot install
 
 rm /boot/loader/loader.conf

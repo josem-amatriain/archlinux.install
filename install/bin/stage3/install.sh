@@ -1,13 +1,10 @@
-#!/bin/bash -x
+#!/bin/bash
 
 MYDIR="/install"
 cd $MYDIR
 
-#mv /etc/resolv.conf /etc/resolv.conf.0
-#cp $MYDIR/network/resolv.conf /etc/resolv.conf
-
-source etc/config.sh
-source etc/config.post.sh
+source $MYDIR/etc/config.sh
+source $MYDIR/etc/config.stage3.sh
 
 for IFACE in $MYDIR/etc/network/ifaces/*.sh
 do
@@ -35,6 +32,3 @@ fi
 
 # Add user to group:
 # usermod -G docker user
-
-#cp /etc/skel/.bash_profile /root/.
-#sed -e 's/\"$GREEN\"/\"\$RED\"/g' etc/bashrc > /root/.bash_profile

@@ -1,6 +1,10 @@
 #!/bin/bash -x 
 
 
+source /install/etc/config.stage2.sh
+source $MYDIR/etc/config.stage2.locale.sh
+cd $MYDIR
+
 echo "$VCONSOLE" > /etc/vconsole.conf
 
 mv /etc/locale.gen /etc/locale.gen.0

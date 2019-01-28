@@ -1,6 +1,8 @@
-#!/bin/bash -x
+#!/bin/bash
 
-source etc/config.sh
+# LOAD parameters
+source /tmp/install/etc/config.sh
+cd $MYDIR
 source etc/network/iface.sh
 
 # LOCAL IP

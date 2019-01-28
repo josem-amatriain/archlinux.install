@@ -3,14 +3,9 @@
 clear
 
 MYDIR="/install"
-
-echo "$MYDIR==="
-
-source $MYDIR/etc/config.sh
-#source $MYDIR/etc/config.net.sh
-source $MYDIR/etc/config.post.sh
-
-# echo arch-chroot /mnt
+source $MYDIR/etc/config.stage2.sh
+source $MYDIR/etc/config.stage3.sh
+source $MYDIR/etc/network/iface.sh
 
 if [ -a "$MYDIR/etc/bashrc.0" ]; then 
     source $MYDIR/etc/bashrc.0
@@ -27,8 +22,7 @@ echo -en "\n Testing system datetime: $GREEN $(date) $DEF\n"
 echo -en "\n\n\n\n"
 echo -en "\n Testing network: GW=$GW IP=$MYIP HOSTNAME=$HOSTNAME\n"
 hostname
-read x
-clear
+
 ping -c1 $GW
 if [ $? -eq 0 ]; then 
     echo -e "$GREEN $GW OK$DEF Gateway riched"; 
@@ -37,7 +31,15 @@ else
     exit 1
 fi
 
-ping -c1 archlinux.org
+ping -c1 $PING_TEST
+if [ $? -eq 0 ]; then 
+    echo -e "$GREEN $PING_TEST OK$DEF riched"; 
+else 
+    echo -e "$RED NO $PING_TEST riched$DEF"; 
+    exit 1
+fi
+
+ping -c1 $PING_URL
 if [ $? -eq 0 ]; then 
     echo -e "$GREEN OK$DEF INTERNET riched"; 
 else 

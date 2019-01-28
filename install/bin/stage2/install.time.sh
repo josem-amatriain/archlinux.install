@@ -1,3 +1,7 @@
+#!/bin/bash 
+
+source /install/etc/config.stage2.sh
+cd $MYDIR
 
 
 rm -f /etc/localtime

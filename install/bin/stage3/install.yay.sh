@@ -6,6 +6,8 @@ pacman --noconfirm -S --asdeps go
 
 echo "Como usuario"
 
+su - user
+
 cd /tmp/
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 

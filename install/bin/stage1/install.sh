@@ -1,7 +1,5 @@
 #!/bin/bash
 
-clear
-
 # LOAD parameters
 source /tmp/install/etc/config.sh
 cd $MYDIR
@@ -9,49 +7,43 @@ cd $MYDIR
 # initial setup
 timedatectl set-ntp true
 
+echo -en "\n\n"
+echo "Beggining network minimal installation";
+echo -en "\n\n"
 # network setup
-source $MYDIR/bin/stage1/network.manual.install.sh 
+$MYDIR/bin/stage1/network.manual.install.sh 
+
 # partitioning
-if [ -z "$DEBUG" ]; then true
-    else echo "Beggining partition process?? Enter to continue..."; clear
-fi
-clear
+echo -en "\n\n"
+echo "Beggining partition process.";
+echo -en "\n\n"
+
 $MYDIR/bin/stage1/partitioning.sh >> $LOG 2>&1
 
-if [ -z "$DEBUG" ]; then true
-else
-echo "Partitions created. Enter to continue"
-fi
-clear
+echo -en "\n\n"
+echo "Partitions created."
+echo -en "\n\n"
+
 # mounting
 $MYDIR/bin/stage1/mounting.sh  >> $LOG 2>&1
 
-if [ -z "$DEBUG" ]; then true
-else
-    mount | grep '/dev/sd'
-    echo "Mounted devices? . Enter to continue"
-    
-    clear
-fi
+echo -en "\n\n"
+echo "Mounted devices."
+mount | grep '/dev/sd'
+echo -en "\n\n"
 
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.0
 cp -p $MYDIR/etc/network/mirrorlist /etc/pacman.d/mirrorlist
 
-if [ -z "$DEBUG" ]; then true
-else
-    echo "Begining intallation of packages. Enter to continue"
-    
-fi
-clear
+echo -en "\n\n"
+echo "Begining intallation of packages"
+echo -en "\n\n"
 
 $MYDIR/bin/stage1/pacman.sh 
 
-if [ -z "$DEBUG" ]; then true
-else
-    echo "Installation of packages DONE?. Begining chroot: Enter to continue"
-    
-    clear
-fi
+echo -en "\n\n"
+echo "Begining chroot."
+echo -en "\n\n"
 
 cp -rup /tmp/install /mnt/install
 # stage2 must be at /mnt/install... Chroot finds it at /install/...
@@ -61,5 +53,5 @@ mv /mnt/etc/resolv.conf /mnt/etc/resolv.conf.0
 cp $MYDIR/etc/network/resolv.conf /mnt/etc/resolv.conf
 genfstab -U /mnt > /mnt/etc/fstab 
 
-echo "REBOOT???"
-#reboot
+echo "REBOOT please. Then yo must run stage3/install.sh"
+

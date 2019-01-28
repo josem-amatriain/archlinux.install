@@ -3,7 +3,7 @@
 # network.manual.install.sh
 
 IFACE="enp1s0"
-IP="192.168.1.2"
+IP="192.168.1.123"
 NETMASK=24
 
 GW="192.168.1.1"
