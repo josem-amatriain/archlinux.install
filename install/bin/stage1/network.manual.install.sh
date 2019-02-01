@@ -28,7 +28,7 @@ fi
 ping -c1 $PING_URL
 if [ $? -eq 0 ]; then true; else 
     mv /etc/resolv.conf /etc/resolv.conf.0
-    cp network/resolv.conf /etc/resolv.conf
+    cp etc/network/resolv.conf /etc/resolv.conf
     ping -c1 $PING_URL
 fi
 
