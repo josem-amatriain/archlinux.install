@@ -3,7 +3,7 @@
 MYDIR="/install"
 cd $MYDIR
 
-source $MYDIR/etc/config.sh
+#source $MYDIR/etc/config.sh
 source $MYDIR/etc/config.stage3.sh
 
 for IFACE in $MYDIR/etc/network/ifaces/*.sh
@@ -26,7 +26,8 @@ fi
 
 if [ -n "$USER" ]; then 
     useradd -m -g $GROUPID -G wheel,users,$GROUP -s /bin/bash $USER
-    passwd $USER
+    echo -en "$PASSWORD\n$PASSWORD\n" > /tmp/borra && passwd < /tmp/borra; rm /tmp/borra
+#    passwd $USER
     cp etc/bashrc /home/$USER/.bashrc
 fi
 
