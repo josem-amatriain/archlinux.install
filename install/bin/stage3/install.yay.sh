@@ -4,6 +4,8 @@ pacman --noconfirm -S base-devel expac git pyalpm python-regex sudo  --needed
 
 pacman --noconfirm -S --asdeps go
 
+echo "user ALL=(ALL) ALL" >> /etc/sudoers
+
 echo "Como usuario
 su - user
 
