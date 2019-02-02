@@ -26,8 +26,7 @@ fi
 
 if [ -n "$USER" ]; then 
     useradd -m -g $GROUPID -G wheel,users,$GROUP -s /bin/bash $USER
-    echo -en "$PASSWORD\n$PASSWORD\n" > /tmp/borra && passwd < /tmp/borra; rm /tmp/borra
-#    passwd $USER
+    echo -en "$PASSWORD\n$PASSWORD\n" > /tmp/borra && passwd $USER < /tmp/borra; rm /tmp/borra
     cp etc/bashrc /home/$USER/.bashrc
 fi
 

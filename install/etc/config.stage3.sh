@@ -9,5 +9,5 @@ YAY=""
 GROUP="usuarios"
 GROUPID="12345"
 USER="user"
-PASSWOD="123456"
+PASSWORD="123456"
 
