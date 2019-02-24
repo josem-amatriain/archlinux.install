@@ -73,6 +73,10 @@ You must change the network device name (eth0) to match your system (for example
 ip addr add 192.168.1.444/24 dev eth0
 ip route show 
 ip route add default via 192.168.1.1
+# RESET
+ip addr flush dev eth0
+ip link set enp1s0 down
+ip link set enp1s0 up
 
 echo -en "\nnameserver 8.8.4.4\n" >> /etc/resolv.conf
 
