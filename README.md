@@ -13,12 +13,12 @@ Scripts for arch linux automtic installation.
  * Initial minimal installation
  * Rebooting and complete installation using git
 
-## Download
+## Download this repository
  * https://linkfox.io/instarchtargz
  * wget https://linkfox.io/branch -O branch.tar.gz
 
-## Create a bootable archlinux usb
-Download a Archlinux bootable iso image and write to a bootable USB device:
+## To create a bootable archlinux usb
+[Download a Archlinux bootable iso](https://www.archlinux.org/download/) image and write to a bootable USB device:
 
 ```
 dd bs=4M if=/tmp/archlinux.iso of=/dev/sdh && sync
@@ -29,12 +29,12 @@ dd bs=4M if=/tmp/archlinux.iso of=/dev/sdh && sync
 
 1. Set BIOS to boot using UEFI.
 
-Press F12 to choose the boot device. We must to choose UEFI boot from USB
+Press F12 to choose the boot device. We must choose UEFI boot from USB
 
-1. If the USB device is not detected the boot image says: Waiting 30 seconds...
-You must to unplug and plug the usb device. The device will be recognized and you can continue.
+1. If the USB device is not detected then the boot image says: Waiting 30 seconds...
+You must unplug and plug the usb device. The device will be recognized and you can continue.
 
-1. If your screen is a modern one with very high resolution the console text will be unredable. You must change console font:
+1. If your screen is a modern one, with very high resolution, the console text will be unredable. You must change console font:
 
 ```
 setfont iso01-12x22.psfu.gz
@@ -94,10 +94,11 @@ passwd 123456
 ```
 
 You have two machines, the machine on which you are going to install and the desktop/personal machine.
-You must download the repository with git in your personal machine and transfer it compressed to the instalation machine. Or you can download in de installation machine using ```wget```
+You must download the repository with git in your personal machine and transfer it compressed to the instalation machine. 
+Or you can download in the installation machine using ```wget``` as you can se in "Download this repository" section.
 
 
-# Install
+# Installing
 
 You must compress the install folder and copy to the destination machine to install:
 ```
@@ -111,8 +112,7 @@ wget https://linkfox.io/instarchtargz
 ```
 
 Using mc, you must uncompress master.atr.gz at /tmp
-You must config etc/config.sh to your settings.
-
+You must config etc/config.sh to fit your needs.
 
 # Using scripts
 
@@ -127,7 +127,7 @@ arch-chroot /mnt /bin/bash -c /tmp/install/install2.sh
 ```
 
 # Customization
-File "parts" must finish with a new line.
+File "parts" (partitions file) must finish with a new line.
 
 ```
 /home /dev/sda
