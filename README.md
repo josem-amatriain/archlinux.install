@@ -6,9 +6,9 @@ Scripts for arch linux automtic installation.
 
 ## Steps
  
- * Create a bootable archlinux usb
- * To boot and set keyboard/console fonts
- * Set network manually
+ * Creating a bootable archlinux usb
+ * Booting and setting up keyboard/console fonts
+ * Setting up network manually
  * Patiotioning and setting UEFI boot
  * Initial minimal installation
  * Rebooting and complete installation using git
