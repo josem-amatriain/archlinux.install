@@ -1,7 +1,7 @@
 # Installation
 
  Before you run the first script you must set the network config by hand.
- The is two options: The wired static network or the wifi (wifi-menu).
+ There is two options: The wired static network or the wifi (wifi-menu).
  The process is described [here](https://github.com/josem-amatriain/archlinux.install#installing-network-manual-mode)
 
  * The ```install1.sh``` script makes the BASIC INSTALL.
