@@ -121,7 +121,7 @@ The first one, makes a basic install. The second one permits booting in the new 
 
 In the destination machine, at the ```/tmp``` directory you must decompress the ```install.tar.gz```. You can use ```mc``` command. You must copy the ```/tmp/install``` folder from compressed file, and execute ```/tmp/install/install1.sh```
 
-The last command in the script ```install1.sh``` is the exeution of ```install2.sh```.
+The last command in the script ```install1.sh``` is the execution of ```install2.sh```.
 ```
 arch-chroot /mnt /bin/bash -c /tmp/install/install2.sh
 ```
