@@ -1,19 +1,19 @@
 #!/bin/bash -x
 
 # LOAD parameters
-source /tmp/install/etc/config.stage1.sh
+source /tmp/install/config/config.stage1.sh
 cd $MYDIR
 
 MYPATH="$MYDIR/etc/gdisk"
 
 rm "$MYDIR/etc/*.partition" 2> /dev/null
 
-source $MYPATH/disks
+source $MYDIR/config/config.disks
 for DISK in $DISKS; do
 	gdisk $DISK < $MYPATH/gdisk.delete.disk
 done
 
-INPUTFILE="$MYDIR/etc/gdisk/parts"
+INPUTFILE="$MYDIR/config/config.parts"
 exec < $INPUTFILE
 
 while read FS DISK DEVICE TYPE MOUNTPOINT LABEL INI END

@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # LOAD parameters
-source /tmp/install/etc/config.stage1.sh
+source /tmp/install/config/config.stage1.sh
 cd $MYDIR
-source etc/network/iface.sh
+source config/iface.sh
 
 # LOCAL IP
 ping -c1 $GW

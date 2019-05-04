@@ -3,7 +3,7 @@
 clear
 
 MYDIR="/install"
-source $MYDIR/etc/config.stage2.sh
+source $MYDIR/config/config.stage2.sh
 cd $MYDIR
 
 pacman --noconfirm  -Sy archlinux-keyring

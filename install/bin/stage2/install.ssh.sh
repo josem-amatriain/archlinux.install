@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /install/etc/config.stage2.sh
+source /install/config/config.stage2.sh
 cd $MYDIR
 
 pacman --noconfirm -S openssh

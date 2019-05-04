@@ -4,7 +4,7 @@ MYDIR="/tmp/install"
 source "$MYDIR/etc/root.partition"
 source "$MYDIR/etc/boot.partition"
 
-source $MYDIR/etc/gdisk/disks
+source $MYDIR/config/config.disks
 for DISK in $DISKS; do
 	partx -u $DISK
 done

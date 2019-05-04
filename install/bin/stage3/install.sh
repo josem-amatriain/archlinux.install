@@ -3,8 +3,8 @@
 MYDIR="/install"
 cd $MYDIR
 
-#source $MYDIR/etc/config.sh
-source $MYDIR/etc/config.stage3.sh
+#source $MYDIR/config/config.sh
+source $MYDIR/config/config.stage3.sh
 
 for IFACE in $MYDIR/etc/network/ifaces/*.sh
 do

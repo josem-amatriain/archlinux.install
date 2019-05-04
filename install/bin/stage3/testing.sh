@@ -3,9 +3,9 @@
 clear
 
 MYDIR="/install"
-source $MYDIR/etc/config.stage2.sh
-source $MYDIR/etc/config.stage3.sh
-source $MYDIR/etc/network/iface.sh
+source $MYDIR/config/config.stage2.sh
+source $MYDIR/config/config.stage3.sh
+source $MYDIR/config/iface.sh
 
 if [ -a "$MYDIR/etc/bashrc.0" ]; then 
     source $MYDIR/etc/bashrc.0

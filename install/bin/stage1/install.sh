@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # LOAD parameters
-source /tmp/install/etc/config.stage1.sh
+source /tmp/install/config/config.stage1.sh
 cd $MYDIR
 
 # initial setup

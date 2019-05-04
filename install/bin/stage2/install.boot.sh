@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-source /install/etc/config.stage2.sh
+source /install/config/config.stage2.sh
 cd $MYDIR
 
 bootctl --path=/boot install

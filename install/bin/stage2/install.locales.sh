@@ -1,8 +1,8 @@
 #!/bin/bash -x 
 
 
-source /install/etc/config.stage2.sh
-source $MYDIR/etc/config.stage2.locale.sh
+source /install/config/config.stage2.sh
+source $MYDIR/config/config.stage2.locale.sh
 cd $MYDIR
 
 echo "$VCONSOLE" > /etc/vconsole.conf

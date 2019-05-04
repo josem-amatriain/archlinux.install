@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source /install/etc/config.stage2.sh
-#source $MYDIR/etc/config.net.sh
+source /install/config/config.stage2.sh
+#source $MYDIR/config/config.net.sh
 cd $MYDIR
 
 TARGET="network@.service"
