@@ -112,7 +112,7 @@ wget https://linkfox.io/instarchtargz
 ```
 
 Using mc, you must uncompress master.atr.gz at /tmp
-You must config etc/config.sh to fit your needs.
+
 
 # Using scripts
 
@@ -127,7 +127,8 @@ arch-chroot /mnt /bin/bash -c /tmp/install/install2.sh
 ```
 
 # Customization
-File "parts" (partitions file) must finish with a new line.
+The customization is posible editing the files at the config folder.
+File "config.parts" (partitions file) must finish with a new line.
 
 ```
 /home /dev/sda
