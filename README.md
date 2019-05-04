@@ -15,7 +15,8 @@ Scripts for arch linux automtic installation.
 
 ## Download this repository
  * https://linkfox.io/instarchtargz
- * wget https://linkfox.io/branch -O branch.tar.gz
+ * wget https://linkfox.io/instarchtargz -O branch.tar.gz
+ 
 
 ## To create a bootable archlinux usb
 [Download a Archlinux bootable iso](https://www.archlinux.org/download/) image and write to a bootable USB device:
