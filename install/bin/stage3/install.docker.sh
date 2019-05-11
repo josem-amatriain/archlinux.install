@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-pacman --noconfirm -S docker
+pacman --noconfirm -S docker docker-compose
 
 systemctl enable docker
 systemctl start docker
