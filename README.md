@@ -33,7 +33,10 @@ dd bs=4M if=/tmp/archlinux.iso of=/dev/sdh && sync
 Press F12 to choose the boot device. We must choose UEFI boot from USBç
 
 Check if UEFI is active:
+
+```
 ls /sys/firmware/efi/efivars
+```
 
 1. If the USB device is not detected then the boot image says: Waiting 30 seconds...
 You must unplug and plug the usb device. The device will be recognized and you can continue.
