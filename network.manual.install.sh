@@ -65,16 +65,12 @@ fi
 
 
 #################################################################
-wget https://linkfox.io/instarchtargz -O /tmp/branch.tar.gz
-cd /tmp/; tar xvf /tmp/branch.tar.gz
-systemctl start sshd
-
-echo "Now you can login to this host via ssh and finish de installation proccess.
-Press enter to see your ip address, and use ssh root@xxx.xxx.xxx.xxx to login.
-The installation scripts are at /tmp/archlinux.install-master
-If the network devide is not setup you must execute manual scripts:
-Run init.sh script if not."
+echo "Now you can run the init.sh script"
 read x 
-
 ip addr show | grep inet | grep -v inet6 | grep -v 127
 
+wget https://raw.githubusercontent.com/josem-amatriain/archlinux.install/master/init.sh -O /tmp/init.sh
+
+chmod a+x /tmp/init.sh
+
+/tmp/init.sh 

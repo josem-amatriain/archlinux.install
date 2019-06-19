@@ -47,5 +47,6 @@ ip addr show | grep inet | grep -v inet6 | grep -v 127
 
 wget https://linkfox.io/instarchtargz -O /tmp/branch.tar.gz
 cd /tmp/; tar xvf /tmp/branch.tar.gz
+mv /tmp/archlinux.install-master/install /tmp/.
 systemctl start sshd
 

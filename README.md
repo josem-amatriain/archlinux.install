@@ -20,11 +20,11 @@ dd bs=4M if=/tmp/archlinux.iso of=/dev/sdh && sync
 
 ## First boot
 
-Plug the created usb in the usb port of the computer to be installed.
+Plug the created usb in the usb port of the new computer to be installed.
 
-You must boot the computer using UEFI mode. You must choose the F2/Del key to enter BIOS and configure UEFI boot or F11 key to choose UEFI partition of the USB device.
+You must boot the new computer using UEFI mode. You must choose the F2/Del key to enter BIOS and configure UEFI boot or F11 key to choose UEFI partition of the USB device.
 
-Now you have booted from USB and you have a prompt:
+Now you have booted from USB your new computer and you have a prompt:
 
 ```bash 
 root@archiso ~ #
@@ -32,7 +32,7 @@ root@archiso ~ #
 
 ### Firts commands
 
-The first command must be loadkeys. You can choose your correct layout:
+The first command must be loadkeys. You can choose your correct layout for the keyboard:
 
 ```bash
 loadkeys es
@@ -51,22 +51,48 @@ ls /sys/firmware/efi/efivars
 
 ##  First scripts
 
-You must get the ```initial.sh``` script. It can:
-1. Install manually the network interface.
+### Your network is not configured by dhcp
+
+If your new computer have the network interface configured you can skip this section.
+
+If you d'ont have network connection in the computer booted from USB, you can copy the requiered files to a second USB and plug it to the new computer.
+This script can help you to config the network:
+
+[network.manual.install.sh](https://raw.githubusercontent.com/josem-amatriain/archlinux.install/master/network.manual.install.sh)
+
+### Your network is configured by dhcp or by manual method
+
+Now you must download at your desktop computer the initial scripts and
+copy it to a second USB and plug it to the new computer.
+
+If your network is working, you must get the ```init.sh``` script. It can:
 1. Get the rest of the installation scripts.
 1. Store caché packages to speed-up the installation process.
 1. Start sshd and set a default password, to access from a remote computer.
 
-If you have a network connection you can download the ```initial.sh``` script. If yo d'ont, you can copy the requiered files to a seconf USB and plug it to the computer.
-LINK TO initial.sh
+The ```init.sh``` script:
+[init.sh](https://raw.githubusercontent.com/josem-amatriain/archlinux.install/master/init.sh)
 
-
-
-### Get installation sripts
-
-```bash 
-wget https://linkfox.io/instarchtargz -O branch.tar.gz
+```bash
+wget https://raw.githubusercontent.com/josem-amatriain/archlinux.install/master/init.sh -O /tmp/init.sh
+chmod a+x /tmp/init.sh
 ```
 
+This script creates a structure of folders at 
+
+```bash 
+/tmp/archlinux.install-master
+/tmp/install
+```
+
+# Customizing
+
+Change basic settings, and partition layout at ```/tmp/install/config/*```
+
+When you are done, you can run the install process:
+
+```bash
+/tmp/install/bin/stage1/install.sh 
+```
 
 
