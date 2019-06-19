@@ -1,11 +1,13 @@
 #!/bin/bash -x
 
-ORIGEN="/tmp/sdd1/var.cache.pacman/pkg"
+ORIGEN="$PACMAN_CACHE_PATH"
 DESTINO="/mnt/var/cache/pacman"
 # Install caché
 if [ -d $ORIGEN ]; then
 	mkdir -p $DESTINO
 	rsync  --ignore-errors -au $ORIGEN $DESTINO
+else
+	echo "Caché PATH $PACMAN_CACHE_PATH is empty. Ignoring caché."
 fi
 
 pacman -Sy
