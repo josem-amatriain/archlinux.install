@@ -1,147 +1,72 @@
-# archlinux.install
-Scripts for arch linux automtic installation.
+# Instalación
 
-# Install ARCHLINUX
+1. Crear un usb de arranque
+1. Arrancar desde usb
+1. Primeros pasos
+1. Customizing the installation process
 
+## Crear USB
 
-## Steps
- 
- * Creating a bootable archlinux usb
- * Booting and setting up keyboard/console fonts
- * Setting up network manually
- * Patiotioning and setting UEFI boot
- * Initial minimal installation
- * Rebooting and complete installation using git
+### Get ISO image from archlinux web: 
 
-## Download this repository
- * https://linkfox.io/instarchtargz
- * wget https://linkfox.io/instarchtargz -O branch.tar.gz
- 
+To create a bootable archlinux usb
+[Download a Archlinux bootable iso](https://www.archlinux.org/download/) image and write to a bootable USB device with this commands:
 
-## To create a bootable archlinux usb
-[Download a Archlinux bootable iso](https://www.archlinux.org/download/) image and write to a bootable USB device:
+### Write image to disk
 
 ```
 dd bs=4M if=/tmp/archlinux.iso of=/dev/sdh && sync
 ```
 
-## BOOT
+## First boot
 
+Plug the created usb in the usb port of the computer to be installed.
 
-1. Set BIOS to boot using UEFI.
+You must boot the computer using UEFI mode. You must choose the F2/Del key to enter BIOS and configure UEFI boot or F11 key to choose UEFI partition of the USB device.
 
-Press F12 to choose the boot device. We must choose UEFI boot from USBç
+Now you have booted from USB and you have a prompt:
 
-Check if UEFI is active:
+```bash 
+root@archiso ~ #
+```
+
+### Firts commands
+
+The first command must be loadkeys. You can choose your correct layout:
+
+```bash
+loadkeys es
+loadkeys fr
+loadkeys uk
+```
+
+Theese are for spanish, french and british english. More info here: 
+[Loadkeys](https://wiki.archlinux.org/index.php/Linux_console/Keyboard_configuration#Loadkeys)
+
+Now you can heck if UEFI is OK:
 
 ```
 ls /sys/firmware/efi/efivars
 ```
 
-1. If the USB device is not detected then the boot image says: Waiting 30 seconds...
-You must unplug and plug the usb device. The device will be recognized and you can continue.
+##  First scripts
 
-1. If your screen is a modern one, with very high resolution, the console text will be unredable. You must change console font:
+You must get the ```initial.sh``` script. It can:
+1. Install manually the network interface.
+1. Get the rest of the installation scripts.
+1. Store caché packages to speed-up the installation process.
+1. Start sshd and set a default password, to access from a remote computer.
 
-```
-setfont iso01-12x22.psfu.gz
-# or simply
-setfont iso01-12x22
-# others: ls -l /usr/share/kbd/consolefonts
-setfont Lat2-Terminus16
-``` 
-The fonts are available after installation at /usr/share/fonts/local/
-The /etc/vconsole file sets the console font in the installed system, after reboot. More fonts are available in the postinstallation process. 
-```
-pacman -Sy terminus-font 
-pacman -Ql terminus-font
-setfont ter-v32n
-```
-
-But now, this is not important for our immediate purpose that is to begin the installation.
-
-## Keyboard
-
-```
-# Setting the keyboard languaje (we choose the one that corresponds) : 
-loadkeys es
-loadkeys fr
-loadkeys uk
-
-```
-[Loadkeys](https://wiki.archlinux.org/index.php/Linux_console/Keyboard_configuration#Loadkeys)
+If you have a network connection you can download the ```initial.sh``` script. If yo d'ont, you can copy the requiered files to a seconf USB and plug it to the computer.
+LINK TO initial.sh
 
 
-## Installing network manual mode
 
-You must change the network device name (eth0) to match your system (for example, enp1s0).  
+### Get installation sripts
 
-```
-ip addr add 192.168.1.444/24 dev eth0
-ip route show 
-ip route add default via 192.168.1.1
-# RESET
-ip addr flush dev eth0
-ip link set enp1s0 down
-ip link set enp1s0 up
-
-echo -en "\nnameserver 8.8.4.4\n" >> /etc/resolv.conf
-
-ping archlinux.org
+```bash 
+wget https://linkfox.io/instarchtargz -O branch.tar.gz
 ```
 
-Now, we can use remote scripts from our repository.
-
-
-```
-timedatectl set-ntp true
-systemctl start sshd 
-passwd 123456
-123456
-```
-
-You have two machines, the machine on which you are going to install and the desktop/personal machine.
-You must download the repository with git in your personal machine and transfer it compressed to the instalation machine. 
-Or you can download in the installation machine using ```wget``` as you can se in "Download this repository" section.
-
-
-# Installing
-
-You must compress the install folder and copy to the destination machine to install:
-```
-scp /tmp/install.tar.gz root@destination_machine:/tmp/.
-# or
-cd /tmp
-wget https://github.com/josem-amatriain/archlinux.install/archive/master.tar.gz
-# or 
-wget https://linkfox.io/instarchtargz
-
-```
-
-Using mc, you must uncompress master.atr.gz at /tmp
-
-
-# Using scripts
-
-The repository has two main scripts: ```install1.sh``` and ```install2.sh```
-The first one, makes a basic install. The second one permits booting in the new fresh system and complete the installation.
-
-In the destination machine, at the ```/tmp``` directory you must decompress the ```install.tar.gz```. You can use ```mc``` command. You must copy the ```/tmp/install``` folder from compressed file, and execute ```/tmp/install/install1.sh```
-
-The last command in the script ```install1.sh``` is the execution of ```install2.sh```.
-```
-arch-chroot /mnt /bin/bash -c /tmp/install/install2.sh
-```
-
-# Customization
-The customization is posible editing the files at the config folder.
-File "config.parts" (partitions file) must finish with a new line.
-
-```
-/home /dev/sda
-/ /dev/sdb 
-/var/lib/docker /dev/sdc
-/usr/local /dev/sdd
-```
 
 
