@@ -1,5 +1,8 @@
 ext4 /dev/sda 1 root /home JmHome 0% 990GB
-fat /dev/sda 2 boot /boot JmBootUEFI 991GB 992GB
+
+fat /dev/sda 2 boot /boot JMBOOTUEFI 991GB 992GB
+# FAT partitions dont like lowercase
+
 swap /dev/sda 3 swap swap JmSwap 992GB 100%
 btrfs /dev/sdb 1 root /var/lib/docker JmDocker 0% 100%
 xfs /dev/sdc 1 root /tmp JmTmp 0% 100%
