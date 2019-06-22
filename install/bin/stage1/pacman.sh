@@ -1,5 +1,7 @@
 #!/bin/bash -x
 
+source /tmp/install/config/config.stage1.sh
+
 ORIGEN="$PACMAN_CACHE_PATH"
 DESTINO="/mnt/var/cache/pacman"
 # Install caché
