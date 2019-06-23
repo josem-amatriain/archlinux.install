@@ -6,7 +6,7 @@ cd $MYDIR
 #source $MYDIR/config/config.sh
 source $MYDIR/config/config.stage3.sh
 
-for IFACE in $MYDIR/etc/network/ifaces/*.sh
+for IFACE in $MYDIR/config/ifaces/*.sh
 do
     IF0=$(basename $IFACE)
     IF=$( echo $IF0 | cut -d'.' -f1)

@@ -1,5 +1,6 @@
 #!/bin/bash -x
 
+# This script is activated
 
 IFACE="enp1s0"
 MYIP="192.168.1.123"

@@ -5,7 +5,6 @@ clear
 MYDIR="/install"
 source $MYDIR/config/config.stage2.sh
 source $MYDIR/config/config.stage3.sh
-source $MYDIR/config/iface.sh
 
 if [ -a "$MYDIR/etc/bashrc.0" ]; then 
     source $MYDIR/etc/bashrc.0
@@ -20,34 +19,37 @@ echo -en "\n\n   $BLUE Testing installation$DEF.\n\n"
 echo -en "\n Testing system datetime: $GREEN $(date) $DEF\n"
 
 echo -en "\n\n\n\n"
-echo -en "\n Testing network: GW=$GW IP=$MYIP HOSTNAME=$HOSTNAME\n"
-hostname
 
-ping -c1 $GW
-if [ $? -eq 0 ]; then 
-    echo -e "$GREEN $GW OK$DEF Gateway riched"; 
-else 
-    echo -e "$RED NO $GW Gateway riched$DEF"; 
-    exit 1
-fi
-
-ping -c1 $PING_TEST
-if [ $? -eq 0 ]; then 
-    echo -e "$GREEN $PING_TEST OK$DEF riched"; 
-else 
-    echo -e "$RED NO $PING_TEST riched$DEF"; 
-    exit 1
-fi
-
-ping -c1 $PING_URL
-if [ $? -eq 0 ]; then 
-    echo -e "$GREEN OK$DEF INTERNET riched"; 
-else 
-    echo -e "$RED NO INTERNET riched$DEF"; 
-    exit 1
-fi
-read x 
-clear
+for IFACE in $MYDIR/config/ifaces/*.sh
+do
+    echo -en "\n Testing network: GW=$GW IP=$MYIP HOSTNAME=$HOSTNAME\n"
+    hostname
+    ping -c1 $GW
+    if [ $? -eq 0 ]; then 
+        echo -e "$GREEN $GW OK$DEF Gateway riched"; 
+    else 
+        echo -e "$RED NO $GW Gateway riched$DEF"; 
+        exit 1
+    fi
+    
+    ping -c1 $PING_TEST
+    if [ $? -eq 0 ]; then 
+        echo -e "$GREEN $PING_TEST OK$DEF riched"; 
+    else 
+        echo -e "$RED NO $PING_TEST riched$DEF"; 
+        exit 1
+    fi
+    
+    ping -c1 $PING_URL
+    if [ $? -eq 0 ]; then 
+        echo -e "$GREEN OK$DEF INTERNET riched"; 
+    else 
+        echo -e "$RED NO INTERNET riched$DEF"; 
+        exit 1
+    fi
+    read x 
+    clear
+done
 
 echo -en "\n\n   $BLUE Network confign$DEF.\n\n"
 systemctl status network@*
