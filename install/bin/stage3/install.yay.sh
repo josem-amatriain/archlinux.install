@@ -1,8 +1,8 @@
 #!/bin/bash -x
 
-pacman --noconfirm -S base-devel expac git pyalpm python-regex sudo  --needed
+pacman --noconfirm   --needed -S base-devel expac git pyalpm python-regex sudo
 
-pacman --noconfirm -S --asdeps go
+pacman --noconfirm  --needed -S --asdeps go
 
 echo "user ALL=(ALL) ALL" >> /etc/sudoers
 
