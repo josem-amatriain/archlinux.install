@@ -1,5 +1,5 @@
 #!/bin/bash -x
 
-pacman --noconfirm -S parted  btrfs-progs 
+pacman  --needed --noconfirm  -S parted  btrfs-progs 
 
 
