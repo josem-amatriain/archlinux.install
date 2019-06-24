@@ -14,4 +14,4 @@ locale-gen
 #echo -en "\nLANG=$LANG\n" >> /etc/locale.conf
 echo "$LOCALECONF" >> /etc/locale.conf
 
-pacman --noconfirm -S terminus-font
+pacman --needed --noconfirm -S terminus-font
