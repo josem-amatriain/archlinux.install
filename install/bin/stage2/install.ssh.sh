@@ -5,8 +5,8 @@ cd $MYDIR
 
 pacman --needed --noconfirm -S openssh
 
-#echo -en "\n\nPasswordAuthentication yes\nPermitRootLogin yes\n" > /etc/ssh/sshd_config
-echo -en "$CONFIG_SSH" > /etc/ssh/sshd_config
+cp -p /etc/ssh/sshd_config /etc/ssh/sshd_config.0
+echo -en "$CONFIG_SSH" >> /etc/ssh/sshd_config
 
 systemctl enable sshd
 systemctl start sshd
