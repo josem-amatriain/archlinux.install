@@ -60,6 +60,8 @@ This script can help you to config the network:
 
 [network.manual.install.sh](https://raw.githubusercontent.com/josem-amatriain/archlinux.install/master/network.manual.install.sh)
 
+This method only works for wired networks, for wireless networks you need to run wifi-menu. This is a sript from arclinux installation that will config your wireless device. You must know the accesspoint name and the credentials.
+
 ### Your network is configured by dhcp or by manual method
 
 Now you must download at your desktop computer the initial scripts and
