@@ -16,9 +16,12 @@ mkdir -p /mnt/boot
 mount $BOOT_PARTITION /mnt/boot
 
 INPUTFILE="$MYDIR/etc/other.partition"
-exec < $INPUTFILE
-while read DEVICE FS MOUNTPOINT
-do
+
+if [ -f $INPUTFILE ]; then 
+ exec < $INPUTFILE
+ while read DEVICE FS MOUNTPOINT
+ do
 	mkdir -p /mnt$MOUNTPOINT
 	mount $DEVICE /mnt$MOUNTPOINT
-done
+ done
+fi
