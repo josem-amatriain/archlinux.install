@@ -40,7 +40,7 @@ echo -e "$PASS\n$PASS\n" | passwd
 echo "Now you can login to this host via ssh and finish de installation proccess.
 Press enter to see your ip address, and use ssh root@xxx.xxx.xxx.xxx to login.
 The installation scripts are at /tmp/archlinux.install-master
-If the network devide is not setup you must execute manual scripts:"
+If network device is not set up you must execute manual scripts:"
 read x 
 
 ip addr show | grep inet | grep -v inet6 | grep -v 127
