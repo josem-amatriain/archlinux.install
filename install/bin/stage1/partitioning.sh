@@ -22,6 +22,10 @@ do
 #	DISK=$( echo $DEVICE | grep -o '/dev/[a-z]*' )
 #	gdisk $DISK < $MYDIR/etc/gdisk/gdisk.$TYPE 
 	$MYDIR/bin/stage1/parted.$TYPE.sh $DEVICE $FS $TYPE $LABEL $INI $END $DISK
+	# Refreshing partition info
+	sync
+	partx -u $DISK
+	sync
 	
 	DEVICE2=""  # checking two different ways to compose partition numbers
 	if [ -b $DISK$DEVICE    ]; then DEVICE2=$DISK$DEVICE; fi
@@ -32,6 +36,7 @@ do
 	fi
 	
 	$MYDIR/bin/stage1/format.$FS.sh $DISK$DEVICE $FS $TYPE $LABEL
+	sync
 #	mkdir -p /mnt$MOUNTPOINT
 #	mount -t $FS $DISK$DEVICE /mnt$MOUNTPOINT
 	if [ "$TYPE" == "root" ]; then
