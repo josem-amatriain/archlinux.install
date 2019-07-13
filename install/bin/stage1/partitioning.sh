@@ -35,7 +35,7 @@ do
 		exit 111 
 	fi
 	
-	$MYDIR/bin/stage1/format.$FS.sh $DISK$DEVICE $FS $TYPE $LABEL
+	$MYDIR/bin/stage1/format.$FS.sh $DEVICE2 $FS $TYPE $LABEL
 	sync
 #	mkdir -p /mnt$MOUNTPOINT
 #	mount -t $FS $DISK$DEVICE /mnt$MOUNTPOINT
