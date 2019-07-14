@@ -6,7 +6,7 @@
 GW="192.168.1.1"
 # Interface/Network device
 IFACE=$( dmesg | grep '[^ ]*: Link is Down' -o | cut -f1 -d':' )
-IFACE=$( cat /proc/net/dev | grep '^.*:' -o | grep -v 'lo:' )
+IFACE=$( cat /proc/net/dev | grep '^.*:' -o | grep -v 'lo:'  | cut -d: -f1 )
 # IP/NETWORK MASK
 IP="192.168.1.40"
 NETMASK="24"
