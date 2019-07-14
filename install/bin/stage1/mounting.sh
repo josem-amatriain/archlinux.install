@@ -9,14 +9,9 @@ for DISK in $DISKS; do
 	partx -u $DISK
 done
 
-
-
 mount $ROOT_PARTITION /mnt
-mkdir -p /mnt/boot
-mount $BOOT_PARTITION /mnt/boot
 
 INPUTFILE="$MYDIR/etc/other.partition"
-
 if [ -f $INPUTFILE ]; then 
  exec < $INPUTFILE
  while read DEVICE FS MOUNTPOINT
@@ -25,3 +20,6 @@ if [ -f $INPUTFILE ]; then
 	mount $DEVICE /mnt$MOUNTPOINT
  done
 fi
+
+mkdir -p /mnt/boot
+mount $BOOT_PARTITION /mnt/boot
