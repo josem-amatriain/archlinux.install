@@ -100,3 +100,9 @@ When you are done, you can run the install process:
 Be sure you set up  de DEBUG variable to empty: DEBUG="", If DEBUG is set at DEBUG=debug all standard output is sent to a debug file at /tmp/debug.* It can be util to debug scripts.
 
 
+# Finishing
+
+https://wiki.archlinux.org/index.php/HiDPI
+https://wiki.archlinux.org/index.php/NetworkManager
+https://wiki.archlinux.org/index.php/Dell_XPS_13_(9343)
+
