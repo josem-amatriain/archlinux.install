@@ -31,4 +31,4 @@ if [ -n "$USER" ]; then
 fi
 
 # Add user to group:
-# usermod -G docker user
+# usermod -a -G docker user
