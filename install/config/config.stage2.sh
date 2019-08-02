@@ -1,8 +1,8 @@
 
 DEBUG=debug
-LOG=/tmp/debug.install.$(basename $0).log
-
 MYDIR="/install"
+LOG=$MYDIR/debug.install.$(basename $0).log
+
 
 # By default the terminus-console is installed
 # You can include here other:
