@@ -15,7 +15,8 @@ To create a bootable archlinux usb
 ### Write image to disk
 
 ```
-dd bs=4M if=/tmp/archlinux.iso of=/dev/sdh && sync
+# dd bs=4M if=/tmp/archlinux.iso of=/dev/sdh && sync
+dd bs=4M if=/path/archlinux.iso of=/dev/sdX status=progress && sync
 ```
 
 ## First boot
