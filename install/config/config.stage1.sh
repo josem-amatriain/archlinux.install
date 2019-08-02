@@ -9,8 +9,8 @@ MYDIR="/tmp/install"
 
 ZONEINFO="Europe/Madrid"
 
-HOSTNAME="panzer"
-MYIP="192.168.1.123"
+HOSTNAME="myhostname"
+MYIP="192.168.1.231"
 
 PACMAN_CACHE_PATH="/tmp/sdd1/var.cache.pacman/pkg"
 
