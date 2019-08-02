@@ -10,6 +10,11 @@ for DISK in $DISKS; do
 done
 
 mount $ROOT_PARTITION /mnt
+if [ $? -eq 0 ] then true
+else
+	echo "Error mounting root partition $ROOT_PARTITION /mnt"
+	exit 33
+fi
 
 INPUTFILE="$MYDIR/etc/other.partition"
 if [ -f $INPUTFILE ]; then 
@@ -18,8 +23,21 @@ if [ -f $INPUTFILE ]; then
  do
 	mkdir -p /mnt$MOUNTPOINT
 	mount $DEVICE /mnt$MOUNTPOINT
+	if [ $? -eq 0 ] then true
+	else
+		echo "Error mounting partition $DEVICE /mnt$MOUNTPOINT"
+		exit 35
+	fi
+
  done
 fi
 
 mkdir -p /mnt/boot
 mount $BOOT_PARTITION /mnt/boot
+if [ $? -eq 0 ] then true
+else
+	echo "Error mounting boot partition $BOOT_PARTITION /mnt/boot"
+	exit 34
+fi
+
+exit 0
