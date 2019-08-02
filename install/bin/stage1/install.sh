@@ -6,6 +6,7 @@ cd $MYDIR
 
 # initial setup
 timedatectl set-ntp true
+timedatectl set-timezone $ZONEINFO
 
 echo -en "\n\n"
 echo "Beggining network minimal installation";
