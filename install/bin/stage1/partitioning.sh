@@ -7,6 +7,18 @@ cd $MYDIR
 MYPATH="$MYDIR/etc/gdisk"
 
 rm "$MYDIR/etc/*.partition" 2> /dev/null
+RES=$( grep boot "$MYDIR/config/config.parts" )
+if [ -z "$RES" ]; then
+	echo "Error. Not boot partititon."
+	exit 1
+fi
+
+RES=$( grep root "$MYDIR/config/config.parts" )
+if [ -z "$RES" ]; then
+	echo "Error. Not root partititon."
+	exit 1
+fi
+
 
 source $MYDIR/config/config.disks
 for DISK in $DISKS; do
@@ -50,6 +62,7 @@ do
 	fi
 done
 
+exit 0
 
 # gdisk /dev/sdd < gdisk.delete.disk
 # gdisk /dev/sdd < gdisk.boot
