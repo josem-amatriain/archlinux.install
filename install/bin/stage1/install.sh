@@ -20,6 +20,11 @@ echo "Beggining partition process.";
 echo -en "\n\n"
 
 $MYDIR/bin/stage1/partitioning.sh >> $LOG 2>&1
+if [ $? -eq 0 ]; then true
+else
+    echo "Error when partitioning."
+    exit 22
+fi
 
 echo -en "\n\n"
 echo "Partitions created."
@@ -27,10 +32,16 @@ echo -en "\n\n"
 
 # mounting
 $MYDIR/bin/stage1/mounting.sh  >> $LOG 2>&1
+if [ $? -eq 0 ]; then true
+else
+    echo "Error when mounting partitions."
+    exit 22
+fi
+
 
 echo -en "\n\n"
 echo "Mounted devices."
-mount | grep '/dev/sd'
+mount | grep '/mnt'
 echo -en "\n\n"
 
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.0
