@@ -2,7 +2,9 @@
 
 # LOAD parameters
 source /tmp/install/config/config.stage1.sh
+rm /tmp/*.log
 cd $MYDIR
+
 
 # initial setup
 timedatectl set-ntp true
