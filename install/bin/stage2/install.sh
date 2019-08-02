@@ -10,7 +10,7 @@ pacman --noconfirm  -Sy archlinux-keyring
 #pacman-key --refresh-keys
 
 # INSTALLING BOOT
-$MYDIR/bin/stage2/install.boot.sh 
+# $MYDIR/bin/stage2/install.boot.sh 
 
 # INSTALLING LOCALES
 $MYDIR/bin/stage2/install.locales.sh 
