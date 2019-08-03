@@ -7,7 +7,8 @@ echo -e "\nserver hora.rediris.es iburst\nserver pulsar.rediris.es iburst\n" >> 
 
 systemctl enable ntpd
 systemctl start ntpd
-
+sync
+sleep 1s
 
 ntpq -np
 
