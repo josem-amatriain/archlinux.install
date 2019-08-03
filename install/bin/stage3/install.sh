@@ -14,7 +14,7 @@ do
 done
 
 pacman --noconfirm -Suy
-pacman --noconfirm -Sy $PACKAGES
+pacman --noconfirm --needed -Sy $PACKAGES
 
 # Create group with ID 12345 by default
 if [ -n "$GROUP" ]; then 
