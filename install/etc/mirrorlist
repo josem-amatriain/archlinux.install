@@ -8,6 +8,9 @@
 # Retrieved:  2018-11-13 17:31:16 UTC
 # Last Check: 2018-11-13 16:34:36 UTC
 
+# Custom repo:
+# Server = http://www.mila.org:8123/$repo/os/$arch
+
 Server = http://mirrors.celianvdb.fr/archlinux/$repo/os/$arch
 Server = http://archlinux.polymorf.fr/$repo/os/$arch
 Server = http://archlinux.mirrors.ovh.net/archlinux/$repo/os/$arch
