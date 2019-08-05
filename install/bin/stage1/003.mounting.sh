@@ -1,10 +1,12 @@
 #!/bin/bash -x
 
-MYDIR="/tmp/install"
+# LOAD parameters
+source /tmp/install/config/config.sh
+
 source "$MYDIR/etc/root.partition"
 source "$MYDIR/etc/boot.partition"
-
 source $MYDIR/config/config.disks
+
 for DISK in $DISKS; do
 	partx -u $DISK
 done
@@ -40,4 +42,10 @@ else
 	exit 34
 fi
 
+echo -en "\n\n"
+echo "Mounted devices."
+mount | grep '/mnt/' 
+echo -en "\n\n"
+
 exit 0
+

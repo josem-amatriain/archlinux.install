@@ -1,8 +1,6 @@
-#!/bin/bash 
+#!/bin/bash -x
 
-source /install/config/config.stage2.sh
-cd $MYDIR
-
+source /install/config/config.sh
 
 rm -f /etc/localtime
 ln -s /usr/share/zoneinfo/$ZONEINFO /etc/localtime

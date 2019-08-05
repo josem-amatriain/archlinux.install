@@ -1,14 +1,11 @@
-#!/bin/bash
+#!/bin/bash -x
 
-source /install/config/config.stage2.sh
-#source $MYDIR/config/config.net.sh
-cd $MYDIR
+source /install/config/config.sh
 
 TARGET="network@.service"
 
 echo -en "\n$HOSTNAME\n" > /etc/hostname
 echo -en "\n127.0.0.1  localhost.localdomain localhost\n$MYIP $HOSTNAME\n" >> /etc/hosts
-
 
 # Not working in chroot
 #mv /etc/resolv.conf /etc/resolv.conf.0

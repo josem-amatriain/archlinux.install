@@ -1,9 +1,20 @@
 #!/bin/bash -x
 
-source /tmp/install/config/config.stage1.sh
+# LOAD parameters
+source /tmp/install/config/config.sh
+
+mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.0
+if [ -z "$REPO" ]; then
+	cp -p $MYDIR/etc/network/mirrorlist /etc/pacman.d/mirrorlist
+else
+	echo $REPO >> /etc/pacman.d/mirrorlist
+	cat $MYDIR/etc/network/mirrorlist >> /etc/pacman.d/mirrorlist
+fi
+
 
 ORIGEN="$PACMAN_CACHE_PATH"
-DESTINO="/mnt/var/cache/pacman"
+DESTINO="/mnt/var/cache/pacman/pkg"
+
 # Install caché
 if [ -d $ORIGEN ]; then
 	mkdir -p $DESTINO

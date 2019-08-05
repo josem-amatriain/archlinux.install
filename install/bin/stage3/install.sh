@@ -1,10 +1,6 @@
 #!/bin/bash
 
-MYDIR="/install"
-cd $MYDIR
-
-#source $MYDIR/config/config.sh
-source $MYDIR/config/config.stage3.sh
+source /install/config/config.sh
 
 for IFACE in $MYDIR/config/ifaces/*.sh
 do

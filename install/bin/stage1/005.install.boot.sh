@@ -1,7 +1,6 @@
 #!/bin/bash -x
 
-source /tmp/install/config/config.stage1.sh
-cd $MYDIR
+source /tmp/install/config/config.sh
 source $MYDIR/etc/root.partition
 
 BOOT_DIR="/mnt/boot"
