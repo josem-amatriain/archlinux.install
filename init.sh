@@ -1,27 +1,5 @@
-#!/bin/bash
+#!/bin/bash -x
 
-
-echo "The usb device: "
-df -h | grep 'sd[e-z]'
-dmesg | grep 'sd.: sd.[1-9]' | grep -v 'sd[a-d]'
-
-
-echo " Parameters:
- First  $1 = device for usb. Example: e1 f1 g2 h1...
- Second $2 = password, if not fedined, '123456' will be used. this '\' is not a valid character.
-"
-
-mkdir -p /tmp/usb
-
-
-if ! [ -b /dev/sd$1 ]; then
-    echo "Give me the correct parameters. 
-    /dev/sd$1 Is not a correct device"
-    exit 0
-fi
-
-mount /dev/sd$1 /tmp/usb 
-shift
 
 PASS=$1
 shift
