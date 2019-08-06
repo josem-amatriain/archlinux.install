@@ -98,7 +98,7 @@ YAY=""
 PACKAGES_MC=" aspell cabextract p7zip unace unarj unrar zip cdparanoia cdrkit cvs mtools "
 OTHER=" ethtool htop git openssh intel-ucode pbzip2 parted xfsprogs $PACKAGES_MC "
 
-
+EXTRA_PACKAGES=" cronie bind-tools nfs-utils pass "
 
 
 
