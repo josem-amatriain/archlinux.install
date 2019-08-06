@@ -10,7 +10,11 @@ do
 done
 
 pacman --noconfirm -Suy
-pacman --noconfirm --needed -Sy $PACKAGES
+pacman --noconfirm --needed -Sy $PACKAGES $EXTRA
+systemctl status cronie
+systemctl start cronie
+systemctl enable cronie
+systemctl status cronie
 
 # Create group with ID 12345 by default
 if [ -n "$GROUP" ]; then 
