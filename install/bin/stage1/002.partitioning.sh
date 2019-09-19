@@ -19,7 +19,7 @@ if [ -z "$RES" ]; then
 fi
 
 
-source $MYDIR/config/config.disks
+#source $MYDIR/config/config.disks
 for DISK in $DISKS; do
 	gdisk $DISK < $MYPATH/gdisk.delete.disk
 done
