@@ -95,7 +95,7 @@ Change basic settings, and partition layout at ```/tmp/install/config/*```
 When you are done, you can run the install process:
 
 ```bash
-/tmp/install/bin/stage1/install.sh 
+/tmp/install/bin/stage1/000.install.sh 
 ```
 
 Be sure you set up  de DEBUG variable to empty: DEBUG="", If DEBUG is set at DEBUG=debug all standard output is sent to a debug file at /tmp/debug.* It can be util to debug scripts.
