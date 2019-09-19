@@ -43,3 +43,8 @@ if [ -z "$DOMAIN" ]; then true
 else
 	echo -en "\ndomain $DOMAIN\n" >> /etc/resolv.conf
 fi
+
+
+cat /mnt/etc/resolv.conf > /mnt/etc/resolv.conf.0
+cat /etc/resolv.conf >  /mnt/etc/resolv.conf
+
