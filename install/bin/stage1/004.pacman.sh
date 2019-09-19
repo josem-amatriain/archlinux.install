@@ -3,6 +3,9 @@
 # LOAD parameters
 source /tmp/install/config/config.sh
 
+cat /mnt/etc/resolv.conf > /mnt/etc/resolv.conf.0
+cat /etc/resolv.conf >  /mnt/etc/resolv.conf
+
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.0
 if [ -z "$REPO" ]; then
 	cp -p $MYDIR/etc/network/mirrorlist /etc/pacman.d/mirrorlist
