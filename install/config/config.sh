@@ -42,6 +42,7 @@ DISKS="/dev/sda
 ZONEINFO="Europe/Madrid"
 
 PACMAN_CACHE_PATH="/tmp/sdd1/var.cache.pacman/pkg"
+PACMAN_CACHE_PATH=""
 
 # By default the terminus-console is installed
 # You can include here other:
@@ -76,8 +77,6 @@ ZONEINFO="Europe/Madrid"
 
 HOSTNAME="panzer"
 MYIP="192.168.1.213"
-PASSWORD="123456"
-
 
 CONFIG_SSH="\n\nPasswordAuthentication yes\nPermitRootLogin yes\n"
 
@@ -119,6 +118,6 @@ if [ -d "/install" ]; then
 fi
 
 cd $MYDIR
-rm $LOG
-touch $LOG
-tailf $LOG &
+#rm $LOG
+#touch $LOG
+#tailf $LOG &
