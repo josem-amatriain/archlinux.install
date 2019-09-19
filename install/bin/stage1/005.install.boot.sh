@@ -5,6 +5,8 @@ source $MYDIR/etc/root.partition
 
 BOOT_DIR="/mnt/boot"
 
+bootctl --path=$BOOT_DIR install
+
 rm $BOOT_DIR/loader/loader.conf
 rm $BOOT_DIR/loader/entries/arch.conf
 
