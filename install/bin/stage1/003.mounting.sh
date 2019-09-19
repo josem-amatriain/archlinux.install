@@ -5,7 +5,7 @@ source /tmp/install/config/config.sh
 
 source "$MYDIR/etc/root.partition"
 source "$MYDIR/etc/boot.partition"
-source $MYDIR/config/config.disks
+#source $MYDIR/config/config.disks
 
 for DISK in $DISKS; do
 	partx -u $DISK
