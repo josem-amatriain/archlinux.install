@@ -1,5 +1,6 @@
 #!/bin/bash -x
 
+clear
 
 PASS=$1
 shift
