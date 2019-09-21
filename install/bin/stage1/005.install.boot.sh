@@ -15,3 +15,6 @@ cp $MYDIR/boot/arch.conf   $BOOT_DIR/loader/entries/arch.conf
 echo -en "$(blkid -s PARTUUID -o value $ROOT_PARTITION ) rw\n\n" >> $BOOT_DIR/loader/entries/arch.conf
 
 bootctl --path=$BOOT_DIR install
+
+cat /mnt/etc/resolv.conf > /mnt/etc/resolv.conf.0
+cat /etc/resolv.conf >  /mnt/etc/resolv.conf
