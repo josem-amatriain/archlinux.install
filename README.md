@@ -103,6 +103,28 @@ Be sure you set up  de DEBUG variable to empty: DEBUG="", If DEBUG is set at DEB
 
 # Finishing
 
+Now you can use ansible to finish the installation.
+There are a lot of projects at github: 
+
+* https://github.com/dharmab/ansible-archlinux
+* https://github.com/AlexandreCarlton/ansible-archlinux
+* https://github.com/id101010/ansible-archlinux
+* Módulo aur: https://github.com/kewlfft/ansible-aur
+* https://github.com/finchd/archlinux-install
+* https://github.com/tyjak/ansible-archlinux
+* https://github.com/DasFranck/Archsible
+* https://github.com/sudoforge/archer
+* En portatiles DELL XPS13 https://github.com/novln/Kiss-my-Arch
+* https://github.com/novln/Kiss-my-Arch/tree/master/bootstrap/xps13-9360-install
+* https://github.com/burakkose/dotfiles
+* https://github.com/clux/provision/blob/ansible/
+* Instalación y chroot: https://github.com/clux/provision/tree/ansible/archboot
+* IPTABLES: https://github.com/novln/ansible-playbook/blob/master/ovh.yml
+
+
+
+### Others 
+
 https://wiki.archlinux.org/index.php/HiDPI
 https://wiki.archlinux.org/index.php/NetworkManager
 https://wiki.archlinux.org/index.php/Dell_XPS_13_(9343)
