@@ -1,11 +1,11 @@
-# Instalación
+# Instalation
 
-1. Crear un usb de arranque
-1. Arrancar desde usb
-1. Primeros pasos
+1. Make a bootable USB
+1. Boot from USB
+1. First steps
 1. Customizing the installation process
 
-## Crear USB
+## Make bootable USB
 
 ### Get ISO image from archlinux web: 
 
