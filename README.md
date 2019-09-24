@@ -1,4 +1,4 @@
-# Instalation
+# Installation
 
 1. Make a bootable USB
 1. Boot from USB
