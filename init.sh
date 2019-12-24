@@ -17,7 +17,8 @@ fi
 timedatectl set-ntp true
 echo -e "$PASS\n$PASS\n" | passwd
 
-wget https://linkfox.io/instarchtargz -O /tmp/branch.tar.gz
+#wget https://linkfox.io/instarchtargz -O /tmp/branch.tar.gz
+wget https://github.com/josem-amatriain/archlinux.install/archive/master.tar.gz  -O /tmp/branch.tar.gz
 cd /tmp/; tar xvf /tmp/branch.tar.gz
 mv /tmp/archlinux.install-master/install /tmp/.
 systemctl start sshd
