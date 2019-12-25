@@ -8,6 +8,8 @@ read x
 ls /sys/firmware/efi/efivars
 read x
 
+clear
+
 PASS=$1
 shift
 if [ -z "$PASS" ]; then
@@ -19,6 +21,8 @@ echo -e "$PASS\n$PASS\n" | passwd
 
 #wget https://linkfox.io/instarchtargz -O /tmp/branch.tar.gz
 wget https://github.com/josem-amatriain/archlinux.install/archive/master.tar.gz  -O /tmp/branch.tar.gz
+read x
+
 cd /tmp/; tar xvf /tmp/branch.tar.gz
 mv /tmp/archlinux.install-master/install /tmp/.
 systemctl start sshd
@@ -28,7 +32,6 @@ Press enter to see your ip address, and use ssh root@xxx.xxx.xxx.xxx to login.
 The installation scripts are at /tmp/archlinux.install-master
 default password is $PASS
 If network device is not set up you must execute scripts manually:"
-read x 
-
 ip addr show | grep inet | grep -v inet6 | grep -v 127
+read x
 
