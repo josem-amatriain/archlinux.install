@@ -34,6 +34,7 @@ for DISK in $DISKS; do
 	gdisk $DISK < $MYPATH/gdisk.delete.disk
 done
 
+rm "$MYDIR/etc/other.partition"
 INPUTFILE="$MYDIR/config/config.parts"
 exec < $INPUTFILE
 
