@@ -10,7 +10,7 @@ do
 done
 
 pacman --noconfirm -Suy
-pacman --noconfirm --needed -Sy $PACKAGES $EXTRA
+pacman --noconfirm --needed -Sy $PACKAGES $EXTRA_PACKAGES
 systemctl status cronie
 systemctl start cronie
 systemctl enable cronie
