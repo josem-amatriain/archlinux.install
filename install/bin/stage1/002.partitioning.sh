@@ -20,7 +20,17 @@ fi
 
 
 #source $MYDIR/config/config.disks
+# Cleaning disks before using it
 for DISK in $DISKS; do
+	# It prevents working with mounted disks
+	UM=$( df | grep $DISK | cut -f1 -d' ' )
+	if [ -z "$UM" ]; then true;
+	else 
+		for p in $UM; do
+			umount $p
+		done
+	fi
+
 	gdisk $DISK < $MYPATH/gdisk.delete.disk
 done
 
