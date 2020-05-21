@@ -98,7 +98,7 @@ When you are done, you can run the install process:
 /tmp/install/bin/stage1/000.install.sh 
 ```
 
-Be sure you set up  de DEBUG variable to empty: DEBUG="", If DEBUG is set at DEBUG=debug all standard output is sent to a debug file at /tmp/debug.* It can be util to debug scripts.
+Be sure you set up  de DEBUG variable to empty: DEBUG="", If DEBUG is set at DEBUG=debug all standard output is sent to debug files at /tmp/debug.* It can be usefull to debug scripts.
 
 
 # Finishing
