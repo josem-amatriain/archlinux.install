@@ -30,6 +30,6 @@ pacman -Sy
 #pacstrap /mnt --noconfirm archlinux-keyring
 #pacman-key --refresh-keys
 
-pacstrap /mnt --noconfirm base mc btrfs-progs linux
+pacstrap /mnt --noconfirm base mc btrfs-progs linux-lts
 #pacstrap /mnt --noconfirm mc
 
