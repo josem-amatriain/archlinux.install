@@ -25,7 +25,7 @@ if [ -n "$GROUP" ]; then
 fi
 
 if [ -n "$USER" ]; then 
-    useradd -m -g $GROUPID -G video,wheel,users,$GROUP -s /bin/bash $USER
+    useradd -m -G video,wheel,users,$GROUP -s /bin/bash $USER
     echo -en "$PASSWORD\n$PASSWORD\n" > /tmp/borra && passwd $USER < /tmp/borra; rm /tmp/borra
     cp etc/bashrc /home/$USER/.bashrc
 fi
