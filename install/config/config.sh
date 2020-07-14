@@ -51,7 +51,8 @@ VCONSOLE="
 KEYMAP=es
 #FONT=ter-v32n
 FONT=ter-v14n
-
+# pacman -Ql terminus-font
+# ls -la /usr/share/kbd/consolefonts
 "
 
 LOCALEGEN="
