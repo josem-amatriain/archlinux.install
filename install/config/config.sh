@@ -33,7 +33,7 @@ DNS2="8.8.8.8"
 PING_TEST=$DNS1
 # Keyboard layout
 KEYS="es"
-
+KERNEL="linux-lts"
 
 
 DISKS="/dev/sda
