@@ -91,6 +91,19 @@ This script creates a structure of folders at
 # Customizing
 
 Change basic settings, and partition layout at ```/tmp/install/config/*```
+The file config.sh sets the bash variables used for install proccess.
+
+## Partititons
+
+The disks are partitioned using GPT. All disks set at variable "DISKS" (of file config.sh) are initialized and erased.
+The file config.parts sets the partitions layout to be created: theirs filetype, disks, positions, purpouse (boot, root, other), mount points, label, beginning and end. The beginning and end  of the partitions is set as a size or a percent:
+ * A partition begining at the first sector is set as 0%. 
+ * If the partition fills the entire disk: 0% 100%.
+ * A partition from 100M to end of disk: 100M 100%.
+ * A disk of two partitions, the first one 1GB at the bedinning, the second one the rest of the disk.
+  * fat      /dev/sda 1 boot  /boot LABEL1  0% 1GB
+  * btrfs    /dev/sda 2 root  /     LABEL2  1GB 100%
+  
 
 When you are done, you can run the install process:
 
