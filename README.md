@@ -100,7 +100,7 @@ The file config.parts sets the partitions layout to be created: theirs filetype,
  * A partition begining at the first sector is set as 0%. 
  * If the partition fills the entire disk: 0% 100%.
  * A partition from 100M to end of disk: 100M 100%.
- * A disk of two partitions, the first one 1GB at the bedinning, the second one the rest of the disk.
+ * A disk of two partitions, the first one 1GB at the begining, the second one the rest of the disk.
   * fat      /dev/sda 1 boot  /boot LABEL1  0% 1GB
   * btrfs    /dev/sda 2 root  /     LABEL2  1GB 100%
   
