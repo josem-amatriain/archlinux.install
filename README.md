@@ -127,12 +127,13 @@ There are a lot of projects at github:
 * https://github.com/tyjak/ansible-archlinux
 * https://github.com/DasFranck/Archsible
 * https://github.com/sudoforge/archer
-* En portatiles DELL XPS13 https://github.com/novln/Kiss-my-Arch
-* https://github.com/novln/Kiss-my-Arch/tree/master/bootstrap/xps13-9360-install
 * https://github.com/burakkose/dotfiles
-* https://github.com/clux/provision/blob/ansible/
 * Instalación y chroot: https://github.com/clux/provision/tree/ansible/archboot
 * IPTABLES: https://github.com/novln/ansible-playbook/blob/master/ovh.yml
+
+### XPS-13
+* En portatiles DELL XPS13 https://github.com/novln/Kiss-my-Arch
+* https://github.com/novln/Kiss-my-Arch/tree/master/bootstrap/xps13-9360-install
 
 
 
