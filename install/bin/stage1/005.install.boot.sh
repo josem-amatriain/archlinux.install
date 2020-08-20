@@ -11,13 +11,13 @@ rm $BOOT_DIR/loader/loader.conf
 rm $BOOT_DIR/loader/entries/arch.conf
 
 if [ "$KERNEL" -eq "linux-lts" ]; then
-  mkinitcpio -p linux-lts
+  mkinitcpio -P linux-lts
   cp $MYDIR/boot/loader.lts.conf $BOOT_DIR/loader/loader.conf
   cp $MYDIR/boot/arch*.conf   $BOOT_DIR/loader/entries/.
   echo -en "$(blkid -s PARTUUID -o value $ROOT_PARTITION ) rw\n\n" >> $BOOT_DIR/loader/entries/archlts.conf
   echo -en "$(blkid -s PARTUUID -o value $ROOT_PARTITION ) rw\n\n" >> $BOOT_DIR/loader/entries/arch.conf
 else
-  mkinitcpio -p linux
+  mkinitcpio -P linux
   cp $MYDIR/boot/loader.conf $BOOT_DIR/loader/loader.conf
   cp $MYDIR/boot/arch.conf   $BOOT_DIR/loader/entries/arch.conf
   echo -en "$(blkid -s PARTUUID -o value $ROOT_PARTITION ) rw\n\n" >> $BOOT_DIR/loader/entries/arch.conf
