@@ -44,7 +44,7 @@ loadkeys uk
 Theese are for spanish, french and british english. More info here: 
 [Loadkeys](https://wiki.archlinux.org/index.php/Linux_console/Keyboard_configuration#Loadkeys)
 
-Now you can heck if UEFI is OK:
+Now you can check that UEFI is OK:
 
 ```
 ls /sys/firmware/efi/efivars
