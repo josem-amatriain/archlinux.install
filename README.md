@@ -93,6 +93,7 @@ This script creates a structure of folders at
 
 Change basic settings, and partition layout at ```/tmp/install/config/*```
 The file config.sh sets the bash variables used for install proccess.
+We are using systemd-boot: https://wiki.archlinux.org/index.php/Systemd-boot
 
 ## Partititons
 
