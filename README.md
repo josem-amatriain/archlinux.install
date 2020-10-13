@@ -1,5 +1,6 @@
 # Installation
 
+0. See the video list: https://www.youtube.com/playlist?list=PL2t9VWDusOo-0jF18YvEVhwpxTXlXPunG
 1. Make a bootable USB
 1. Boot from USB
 1. First steps
