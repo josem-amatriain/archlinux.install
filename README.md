@@ -144,4 +144,6 @@ There are a lot of projects at github:
 * Hihg resolution screens: https://wiki.archlinux.org/index.php/HiDPI
 * https://wiki.archlinux.org/index.php/NetworkManager
 * https://wiki.archlinux.org/index.php/Dell_XPS_13_(9343)
+* Text dialog-UI https://github.com/jorgeluiscarrillo/arch-setup
+* Text dialog-UI https://github.com/gorkawien/Aturux-OS
 
