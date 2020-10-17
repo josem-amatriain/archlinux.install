@@ -146,4 +146,5 @@ There are a lot of projects at github:
 * https://wiki.archlinux.org/index.php/Dell_XPS_13_(9343)
 * Text dialog-UI https://github.com/jorgeluiscarrillo/arch-setup
 * Text dialog-UI https://github.com/gorkawien/Aturux-OS
-
+* Spanish (old) guide https://www.softzone.es/programas/linux/instalar-arch-linux/
+* Spanish (official) guide https://wiki.archlinux.org/index.php/Installation_guide_(Espa%C3%B1ol)
