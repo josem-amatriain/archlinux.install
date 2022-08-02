@@ -10,6 +10,8 @@ bootctl --path=$BOOT_DIR install
 rm $BOOT_DIR/loader/loader.conf
 rm $BOOT_DIR/loader/entries/arch.conf
 
+bootctl random-seed
+
 if [ "$KERNEL" -eq "linux-lts" ]; then
   mkinitcpio -P linux-lts
   cp $MYDIR/boot/loader.lts.conf $BOOT_DIR/loader/loader.conf
