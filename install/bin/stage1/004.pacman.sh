@@ -26,10 +26,12 @@ else
 	echo "Caché PATH $PACMAN_CACHE_PATH is empty. Ignoring caché."
 fi
 
-pacman -Sy
-#pacstrap /mnt --noconfirm archlinux-keyring
-#pacman-key --refresh-keys
+# Actualizar keyring solamente
+pacman --noconfirm -Sy archlinux-keyring
 
-pacstrap /mnt --noconfirm base mc btrfs-progs linux-lts
-#pacstrap /mnt --noconfirm mc
+pacman -Sy
+pacman-key --refresh-keys
+
+# Instalar
+pacstrap /mnt --noconfirm base mc btrfs-progs linux-lts base-devel htop linux-firmware
 
